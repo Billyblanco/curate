@@ -1,0 +1,9 @@
+.login-button {
+  background-color: salmon;
+  color: gray;
+  height: 40px;
+  width: 60px;
+  padding: 0;
+  float: right;
+  margin-right: 30px;
+}

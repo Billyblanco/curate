@@ -1,0 +1,20 @@
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+  
+}
+
+.product-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly ;
+  align-items: center;
+}
+
+button {
+  background-color: burlywood;
+  width: 30vw;
+  height: 60vh;
+  border: none;
+  padding: 80px;
+  border-radius: 25%;
+}
