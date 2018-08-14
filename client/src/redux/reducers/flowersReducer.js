@@ -3,10 +3,8 @@ import axios from 'axios'
 const FULFILLED = '_FULFILLED'
 const GET_FLOWERS = 'GET_FLOWERS'
 
-
 let initialState = {
-  flowerData: [],
-  
+  flowerData: []
 }
 
 export default function reducer (state = initialState, action) {
@@ -17,7 +15,6 @@ export default function reducer (state = initialState, action) {
       return state
   }
 }
-
 
 export function getFlowers () {
   let flowers = axios.get('/api/flowers').then(response => {
