@@ -11,10 +11,11 @@ Modal.setAppElement('#root')
 const customStyles = {
   content: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    top: '30%',
-    right: '30%',
+    flexDirection: 'row',
+    top: '20%',
+    bottom: '20%',
+    border: '0',
+    borderRadius: '4px'
     
   }
 }
