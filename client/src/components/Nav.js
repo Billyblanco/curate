@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../css/Nav.css'
 import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Nav extends Component {
   constructor (props) {
@@ -9,10 +10,9 @@ class Nav extends Component {
 
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
-      // {/* <h1>CURATE</h1> */}
-        
+  
           this.props.location.pathname === '/'
           ? 
           null
@@ -20,8 +20,8 @@ class Nav extends Component {
         
           <div className="nav-container">
             <div className="button-container">
-              <h2>Logout</h2>
-              <h2>Cart</h2>
+              <Link to='/'><h2>Logout</h2> </Link>
+      
             </div>
           </div>
         

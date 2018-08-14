@@ -6,15 +6,22 @@
 .product-containers {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
+  justify-content: space-around ;
   align-items: center;
+
 }
 
 button {
-  background-color: burlywood;
+  background-color: #DFBFB8;
   width: 30vw;
   height: 60vh;
   border: none;
   padding: 80px;
   border-radius: 25%;
+}
+
+.product {
+  color: gray;
+  
+
 }

@@ -16,18 +16,26 @@ class Landing extends Component {
 
   render() {
     return (
+      <div className='background'>
+      <h1>CURATE</h1>
+    
       <div>
          {this.props.user ? 
         <h1> Welcome Back, {this.props.user.name}!</h1> 
         :
         <button className="login-button" onClick={this.login}>LOGIN</button>}
       </div>
+
+     </div>
     )
   }
 }
+  
 let mapStateToProps = state => {
   return {
     user: state.user
   }
 }
 export default connect (mapStateToProps)(Landing)
+
+

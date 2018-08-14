@@ -4,6 +4,22 @@
   height: 40px;
   width: 60px;
   padding: 0;
-  float: right;
+  align-items: center;
   margin-right: 30px;
+}
+
+h1 {
+  display: sticky;
+  text-align: center;
+  font-weight: 900;
+  line-height: 200%;
+  color: white;
+
+}
+
+.background {
+  background: #DFBFB8;
+  height: 100vh;
+  
+ 
 }

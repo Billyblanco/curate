@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express')
     , session = require('express-session')
     , massive = require('massive')
     , bodyParser = require('body-parser')
     , authController = require('./controllers/authController')
-    require('dotenv').config()
-
+    , flowerController = require('./controllers/flowerController')
+    
 const app = express()
 app.use(bodyParser.json())
   
@@ -29,6 +30,7 @@ app.get('/api/logout', (req, res) => {
   res.sendStatus(200)
 })
 
+app.get('/api/flowers', flowerController.get)
 const PORT = 4007
 app.listen(PORT, () => {
   console.log("COME ON AND SLAM *_*", PORT)
