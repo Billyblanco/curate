@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { getArrangementsFlowers } from '../redux/reducers/arrangementsReducer'
 
 class Cart extends Component {
-  constructor () {
-    super()
-  }
+  
 
   componentDidMount() {
     this.props.getArrangementsFlowers()

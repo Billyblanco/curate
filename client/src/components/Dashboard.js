@@ -4,20 +4,10 @@ import Modal from 'react-modal'
 import { connect } from 'react-redux'
 import { getFlowers, getVases, getDecor } from '../redux/reducers/productReducer'
 import { createArrangement } from '../redux/reducers/arrangementsReducer'
-
+import Flowers from './Flowers'
+import Vases from './Vases'
 Modal.setAppElement('#root')
 
-const customStyles = {
-  content: {
-    display: 'flex',
-    flexDirection: 'row',
-    top: '20%',
-    bottom: '20%',
-    border: '0',
-    borderRadius: '4px',
-    padding: '10px'
-  }
-}
 
 class Dashboard extends Component {
   constructor () {
@@ -27,14 +17,12 @@ class Dashboard extends Component {
       flowerModal: false, 
       vaseModal: false,
       decorModal: false,
-      flowerIds: [],
-      vaseId: null
     }
   }
 
   componentDidMount() {
-    this.props.getFlowers(),
-      this.props.getVases(),
+    this.props.getFlowers()
+      this.props.getVases()
         this.props.getDecor()
   }
 
@@ -51,28 +39,9 @@ closeFlowerModal = () => {this.setState({flowerModal: false })}
 closeVaseModal = () => {this.setState({ vaseModal: false})}
 closeDecorModal = () => {this.setState({decorModal: false})}
 
-addFlowers = (id) => {
-  this.setState({
-    flowerIds: [...this.state.flowerIds, id]
-  })
-}
-
-addVase = (id) => {
-  this.setState({
-    vaseId: id
-  })
-}
-
-completeArrangement = () => {
-  this.props.createArrangement(this.state.vaseId, this.state.flowerIds)
-  this.setState({
-    vaseId: null,
-    flowerIds: []
-  })
-}
 
 render() {
-  console.log(this.state.flowerIds)
+  console.log(this.props.arrangementsData)
   return (
 <div>
 <div className="product-containers">
@@ -80,74 +49,38 @@ render() {
       <button className='product-button'
               onClick={this.toggleFlowerModal}>Click to Add</button>
 
-  <Modal isOpen={this.state.flowerModal}
-        onRequestClose={this.closeFlowerModal}
-        style={customStyles} 
-       
-   >
-   
-        <div><button className='close-button' onClick={this.closeFlowerModal}>close</button></div>
-{ this.props.flowerData.map(flowers => {
-   return (
-    <div className="modal-flower-view">
-      <button onClick={ () => {this.addFlowers(flowers.id)}}>Add to Arrangement</button>
-      <img src={ flowers.image_url} height='400'/>
-    </div>
-       )
-    })
- }
-    <div>
-        <button onClick={this.toggleVaseModal}>Add Flowers To Vase</button>
-      </div>
-   </Modal>
-
+  <Modal 
+    isOpen={this.state.flowerModal}
+    onRequestClose={this.closeFlowerModal}>
+    <Flowers closeModal={this.closeFlowerModal} showVaseModal={this.toggleVaseModal}/>
+  </Modal>
 
    <div className="product"><h2>VASE</h2></div>
      <button className='product-button'
              onClick={this.toggleVaseModal}>Click to Add</button>
 
     <Modal  isOpen={this.state.vaseModal}
-            onRequestClose={this.closeVaseModal}
-            style={customStyles}
-     >
-        <div><button className='close-button'onClick={this.closeVaseModal}>close</button></div>
-    { this.props.vasesData.map(vases => {
-      return (
-      <div>
-        <button onClick={() => {this.addVase(vases.id)}}>Select Vase</button>
-        <img src={ vases.image_url } height='400'/>
-        
-      </div>
-        )
-    })
-  }
-  <div>
-    <button onClick={this.toggleFlowerModal}>Go Back to Flowers</button>
-    <button onClick={ () => {this.completeArrangement()}}>Complete Arrangement!</button>
-    
-    
-  </div>
-  </Modal>
+            onRequestClose={this.closeVaseModal}>
+        <Vases closeModal={this.closeVaseModal}
+                showFlowers={this.toggleFlowerModal}/>
+   </Modal>
 
- <div className="product"><h2>DECOR</h2></div>
-     <button className='product-button'
-             onClick={this.toggleDecorModal}>Click to Add</button>
+    <div className="product"><h2>DECOR</h2></div>
+        <button className='product-button'
+                onClick={this.toggleDecorModal}>Click to Add</button>
 
   <Modal    isOpen={this.state.decorModal}
-            onRequestClose={this.closeDecorModal}
-            style={customStyles}
-  >
+            onRequestClose={this.closeDecorModal}>
 
   <button onClick={this.closeDecorModal}>close</button>
   { this.props.decorData.map(decor => {
     return (
-      <img src={ decor.image_url }/>
+       <img src={ decor.image_url } alt='decor' height='400'/>
       )
     })
   }
   </Modal>
-         
-      </div> 
+    </div> 
 </div>
     )
   }
@@ -155,13 +88,13 @@ render() {
  
 let mapStateToProps = state => {
   return {
-    flowerData: state.products.flowerData,
-    vasesData: state.products.vasesData,
     decorData: state.products.decorData, 
     flowerIds: state.arrangements.flowerIds,
-    vaseId: state.arrangements.vaseId
+    vaseId: state.arrangements.vaseId,
+    arrangementsData: state.arrangements.arrangementsData
   }
 }
+
 export default connect( mapStateToProps, { getFlowers, getVases, getDecor, createArrangement })(Dashboard)
 
 

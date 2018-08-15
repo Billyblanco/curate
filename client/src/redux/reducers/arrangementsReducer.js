@@ -15,11 +15,12 @@ let initialState = {
 export default function reducer ( state = initialState, action) {
   switch (action.type) {
     case ADD_FLOWERS_TO_ARRANGEMENT: 
-      return {... state, flowers: [...state.flowerIds, action.payload]}
+      // console.log(111111, action, 2222222222, state)
+      return {...state, flowerIds: [...state.flowerIds, action.payload]}
     case ADD_VASE:
       return {...state, vaseId: action.payload}
     case CREATE_ARRANGEMENTS + FULFILLED:
-      return {...state, arrangementsData: [ ...state.arrangementsData, action.payload]}
+      return {...state, arrangementsData: [ ...state.arrangementsData, action.payload], flowerIds: [], vaseId: null}
     case GET_ARRANGEMENTS_FLOWERS + FULFILLED:
       return {...state, arrangementsData: action.payload}
   default:

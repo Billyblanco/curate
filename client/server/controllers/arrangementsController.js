@@ -2,14 +2,34 @@ module.exports = {
   getArrangementsFlowers: async (req, res) => {
     let db = req.app.get('db')
     db.getArrangementsFlowers().then(response => {
-      // let serializesResponse = response.reduce((current, elem) => {
-      //   current.forEach(arrangement => {
-      //     if (elem.arrangement_id === arrangement.arrangement_id) {
-      //       arrangement.flower_ids.push(elem.flower_id)
-      //     }
-      //   })
-      // }, [])
-      res.send(response)
+      let organizedArrangements = response.reduce((currArr, elem) => {
+        if (!currArr.length) {
+          let arrangement = createArrangement(elem)
+          currArr.push(arrangement)
+          return currArr
+        } else {
+          let numArrangements = currArr.length
+          let count = 0
+          currArr.forEach(arrangement => {
+            if (arrangement.id === elem.id) {
+              let flower = {
+                name: elem.flower_name,
+                imageUrl: elem.flower_image
+              }
+              arrangement.flowers.push(flower)
+            } else {
+              count++
+            }
+          })
+          if (count === numArrangements) {
+            let arrangement = createArrangement(elem)
+            currArr.push(arrangement)
+            return currArr
+          }
+          return currArr
+        }
+      }, [])
+      res.send(organizedArrangements)
     })
   },
   createArrangement: async (req, res) => {
@@ -34,4 +54,21 @@ module.exports = {
     }
     res.send(arrangement)
   }
+}
+
+function createArrangement(elem) {
+  let vase = {
+    name: elem.vase_name, 
+    imageUrl: elem.vase_image
+  }
+  let flower = {
+    name: elem.flower_name,
+    imageUrl: elem.flower_image
+  }
+  let arrangement = {
+    id: elem.id,
+    vase,
+    flowers: [flower]
+  }
+  return arrangement
 }
