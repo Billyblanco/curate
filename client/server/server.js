@@ -4,9 +4,11 @@ const express = require('express')
     , massive = require('massive')
     , bodyParser = require('body-parser')
     , authController = require('./controllers/authController')
-    , flowerController = require('./controllers/flowerController')
-    , vasesController = require('./controllers/vasesController')
-    , decorController = require('./controllers/decorController')
+    , flowerController = require('./controllers/productController')
+    , vasesController = require('./controllers/productController')
+    , decorController = require('./controllers/productController')
+    , arrangementsController= require('./controllers/arrangementsController')
+    
 
     
 const app = express()
@@ -33,10 +35,17 @@ app.get('/api/logout', (req, res) => {
   res.sendStatus(200)
 })
 
-//Database Gets
-app.get('/api/flowers', flowerController.get)
-app.get('/api/vases', vasesController.get)
-app.get('/api/decor', decorController.get)
+// Get Products from DB
+app.get('/api/flowers', flowerController.getFlowers)
+app.get('/api/vases', vasesController.getVases)
+app.get('/api/decor', decorController.getDecor)
+
+// Create Arrangements and Get arrangements from DB
+app.get('/api/arrangements/flowers', arrangementsController.getArrangementsFlowers)
+app.post('/api/arrangements', arrangementsController.createArrangement)
+
+
+
 
 const PORT = 4007
 app.listen(PORT, () => {

@@ -39,7 +39,6 @@ user_id INTEGER REFERENCES users
 );
 
 
-
 CREATE TABLE orders_decor (
 id SERIAL PRIMARY KEY,
 decor_id INTEGER REFERENCES decor,

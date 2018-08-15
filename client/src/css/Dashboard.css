@@ -23,3 +23,22 @@
 .product {
   color: gray;
 }
+
+button {
+  height: 60px;
+  width: 200px;
+  background-color: #DE8C78;
+  color: white;
+  font-size: 20px; 
+  border: none;
+  
+}
+
+.close-button {
+  background-color: #5C5C5C;
+  width: 100px;
+}
+
+.modal-flower-view {
+  margin: 0
+}

@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux'
 import users from './usersReducer'
-import flowers from './flowersReducer'
-import vases from './vasesReducer'
-import decor from './decorReducer'
+import products from './productReducer'
+import arrangements from './arrangementsReducer'
 
-export default combineReducers({ users, flowers, vases, decor })
+export default combineReducers({ users, products, arrangements })
 
