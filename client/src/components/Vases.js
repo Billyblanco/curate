@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addVase, createArrangement } from '../redux/reducers/arrangementsReducer'
 import { getVases } from '../redux/reducers/productReducer'
-
+import { Link } from 'react-router-dom'
 
 
 function Vases(props) {
@@ -16,14 +16,14 @@ function Vases(props) {
       return (
       <div>
         <button onClick={() => {props.addVase(vases.id)}}>Select Vase</button>
-        <img src={ vases.image_url } alt='vases' height='400'/>
+        <img src={ vases.image_url } alt='vases' height='500'/>
       </div>
         )
     })
   }
   <div>
     <button onClick={props.showFolowers}>Go Back to Flowers</button>
-    <button onClick={ () => {props.createArrangement(props.vaseId, props.flowerIds)} }>Complete Arrangement!</button>
+    <Link to='/cart'><button onClick={ () => {props.createArrangement(props.vaseId, props.flowerIds)} }>Complete Arrangement!</button></Link>
     
   </div>
     </div>
@@ -48,8 +48,8 @@ const customStyles = {
   content: {
     display: 'flex',
     flexDirection: 'row',
-    top: '20%',
-    bottom: '20%',
+    top: '30%',
+    bottom: '40%',
     border: '0',
     borderRadius: '4px',
     padding: '10px'

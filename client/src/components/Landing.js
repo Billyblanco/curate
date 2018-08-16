@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../css/Landing.css'
+import { Link } from 'react-router-dom'
 
 class Landing extends Component {
  
-
   login = () => {
     let auth0domain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`;
     let clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -17,15 +17,15 @@ class Landing extends Component {
   render() {
     return (
       <div className='background'>
-      <h1>CURATE</h1>
+        <h1>CURATE</h1>
+        
     
-      <div>
-         {this.props.user ? 
-        <h1> Welcome Back, {this.props.user.name}!</h1> 
-        :
-        <button className="login-button" onClick={this.login}>LOGIN</button>}
-      </div>
-
+          <div>
+            {this.props.user ? 
+            <h1> Welcome Back, {this.props.user.name}!</h1> 
+            :
+            <button className="login-button" onClick={this.login}>LOGIN</button>}
+          </div>
      </div>
     )
   }

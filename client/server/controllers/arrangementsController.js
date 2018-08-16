@@ -53,6 +53,13 @@ module.exports = {
       })
     }
     res.send(arrangement)
+  },
+  deleteArrangement: (req, res) => {
+    const { id } =req.params
+    let selectedArrangement = arrangements_flowers.find( arrangement => arrangement.id === id)
+      if (selectedArrangement){
+        arrangements_flowers.splice(index, 1)
+      }
   }
 }
 

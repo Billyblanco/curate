@@ -45,7 +45,7 @@ render() {
   return (
 <div>
 <div className="product-containers">
-   <div className='product'><h2>FLOWERS</h2></div>
+   <div className='product'><h2><b>FLOWERS</b></h2></div>
       <button className='product-button'
               onClick={this.toggleFlowerModal}>Click to Add</button>
 
@@ -92,7 +92,9 @@ let mapStateToProps = state => {
     flowerIds: state.arrangements.flowerIds,
     vaseId: state.arrangements.vaseId,
     arrangementsData: state.arrangements.arrangementsData
+    
   }
+  
 }
 
 export default connect( mapStateToProps, { getFlowers, getVases, getDecor, createArrangement })(Dashboard)

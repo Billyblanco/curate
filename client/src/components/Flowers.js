@@ -15,7 +15,7 @@ function Flowers(props) {
         return (
           <div className="modal-flower-view">
             <button onClick={ () => {props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
-            <img src={ flower.image_url} alt='flowers' height='400'/>
+            <img src={ flower.image_url} alt='flowers' height='500'/>
           </div>
         )
       }) }
@@ -36,13 +36,15 @@ let mapStateToProps = state => {
 export default connect(mapStateToProps, {  addFlowersToArrangement, getFlowers})(Flowers)
 
 const customStyles = {
+  
   content: {
     display: 'flex',
     flexDirection: 'row',
-    top: '20%',
-    bottom: '20%',
+    top: '30%',
+    bottom: '50%',
     border: '0',
     borderRadius: '4px',
-    padding: '10px'
+    padding: '10px',
+    
   }
 }

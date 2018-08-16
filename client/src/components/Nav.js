@@ -16,7 +16,8 @@ class Nav extends Component {
         
           <div className="nav-container">
             <div className="button-container">
-              <Link to='/'><h2>Logout</h2> </Link>
+            <h2> C U R A T E</h2>
+              <Link to='/'><h3>Logout</h3> </Link>
       
             </div>
           </div>

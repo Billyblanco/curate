@@ -1,5 +1,14 @@
 .nav-container {
-  height: 30px;
+  height: 60px;
   background-color: #DE8C78;
   color: white;
+}
+
+h2 {
+  float: left;
+}
+
+h3 {
+  float: right;
+  padding-right: 30px;
 }

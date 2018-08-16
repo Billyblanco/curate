@@ -5,6 +5,7 @@ const ADD_FLOWERS_TO_ARRANGEMENT = 'ADD_FLOWERS_TO_ARRANGEMENT'
 const GET_ARRANGEMENTS_FLOWERS = 'GET_ARRANGEMENTS_FLOWERS'
 const CREATE_ARRANGEMENTS = 'CREATE_ARRANGEMENTS'
 const ADD_VASE = 'ADD_VASE'
+const DELETE_ARRANGEMENT = 'DELETE_ARRANGEMENT'
 
 let initialState = {
   flowerIds: [],
@@ -15,13 +16,14 @@ let initialState = {
 export default function reducer ( state = initialState, action) {
   switch (action.type) {
     case ADD_FLOWERS_TO_ARRANGEMENT: 
-      // console.log(111111, action, 2222222222, state)
       return {...state, flowerIds: [...state.flowerIds, action.payload]}
     case ADD_VASE:
       return {...state, vaseId: action.payload}
     case CREATE_ARRANGEMENTS + FULFILLED:
       return {...state, arrangementsData: [ ...state.arrangementsData, action.payload], flowerIds: [], vaseId: null}
     case GET_ARRANGEMENTS_FLOWERS + FULFILLED:
+      return {...state, arrangementsData: action.payload}
+    case DELETE_ARRANGEMENT:
       return {...state, arrangementsData: action.payload}
   default:
       return state
@@ -59,5 +61,15 @@ export function getArrangementsFlowers () {
   return {
     type: GET_ARRANGEMENTS_FLOWERS,
     payload: arrangementsFlowers
+  }
+}
+
+export function deleteArrangement () {
+  let deleted = axios.delete('/api/arrangements/flowers').then(response => {
+    return response.data
+  })
+  return {
+    type: DELETE_ARRANGEMENT,
+    payload: deleted
   }
 }
