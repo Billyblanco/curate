@@ -14,9 +14,9 @@ class Nav extends Component {
           null
           :
         
-          <div className="nav-container">
-            <div className="button-container">
-            <h2> C U R A T E</h2>
+          <div className="navbar">
+            <div className="navbar-header">
+            <Link className='nave-title' to='/dashboard'><h2> C U R A T E</h2></Link>
               <Link to='/'><h3>Logout</h3> </Link>
       
             </div>

@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getArrangementsFlowers } from '../redux/reducers/arrangementsReducer'
-import { getFlowers, getVases } from '../redux/reducers/productReducer'
 import Arrangement from './Arrangements'
 class Cart extends Component {
   
-  state = {
-    arrangements: {}
-  }
+  
 
   componentDidMount() {
     this.props.getArrangementsFlowers()

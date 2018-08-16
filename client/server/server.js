@@ -43,7 +43,7 @@ app.get('/api/decor', decorController.getDecor)
 // Create Arrangements and Get arrangements from DB
 app.get('/api/arrangements/flowers', arrangementsController.getArrangementsFlowers)
 app.post('/api/arrangements', arrangementsController.createArrangement)
-app.delete('/api/arrangements/flowers', arrangementsController.deleteArrangement)
+app.delete('/api/arrangements/flowers/:id', arrangementsController.deleteArrangement)
 
 
 const PORT = 4007

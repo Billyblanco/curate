@@ -19,7 +19,6 @@ class Landing extends Component {
       <div className='background'>
         <h1>CURATE</h1>
         
-    
           <div>
             {this.props.user ? 
             <h1> Welcome Back, {this.props.user.name}!</h1> 
@@ -33,7 +32,7 @@ class Landing extends Component {
   
 let mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.users.user
   }
 }
 export default connect (mapStateToProps)(Landing)

@@ -1,3 +1,6 @@
 DELETE FROM 
 arrangements_flowers 
-WHERE id = $1
+WHERE arrangement_id = $1;
+DELETE FROM 
+arrangements 
+WHERE id = $1;

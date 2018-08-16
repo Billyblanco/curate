@@ -32,7 +32,7 @@ module.exports = {
       res.send(organizedArrangements)
     })
   },
-  createArrangement: async (req, res) => {
+  createArrangement: async (req, res) =>  {
     let db = req.app.set('db')
     let { vaseId, flowerIds } = req.body
     
@@ -49,17 +49,17 @@ module.exports = {
       ...newArrangement,
       flowers: arrangementsFlowerResponse.map( arrResponse => {
         return arrResponse.flower_id
-        // console.log(arrangement)
       })
     }
     res.send(arrangement)
   },
+
   deleteArrangement: (req, res) => {
     const { id } =req.params
-    let selectedArrangement = arrangements_flowers.find( arrangement => arrangement.id === id)
-      if (selectedArrangement){
-        arrangements_flowers.splice(index, 1)
-      }
+    let db = req.app.get('db')
+    db.deleteArrangement([id]).then(response => {
+      res.status(200).send({id})
+    })
   }
 }
 

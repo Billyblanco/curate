@@ -1,5 +1,4 @@
 const axios = require('axios')
-
 module.exports = {
   auth: async (req, res) => {
     try {
@@ -25,18 +24,17 @@ module.exports = {
           if (users.length) {
             req.session.user = users[0]
             console.log(req.session.user)
-            res.redirect('/')
+            res.redirect('/#/dashboard')
           } else {
             let users = await db.createUsers(userInfo)
             req.session.user = users[0]
             console.log(req.session.user)
-            res.redirect('/')
+            res.redirect('/#/dashboard')
           }
-
+          
       } catch (error) {
           console.log("WE HAVE A PROBLEM", error)
           res.redirect('/error')
-
       }
     }
 } 

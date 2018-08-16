@@ -26,11 +26,8 @@
     "eject": "react-scripts eject"
   },
   "nodemonConfig": {
-    "ext": "js/sql",
-    "ignore": [
-      "src/*",
-      "public/*"
-    ]
+    "ext": "js,sql",
+    "ignore": ["src/*", "public/*"]
   },
   "proxy": {
     "/auth/callback": {

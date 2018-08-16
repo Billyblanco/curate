@@ -2,10 +2,8 @@ import axios from 'axios'
 
 const GET_USER = 'GET_USER'
 const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
-
 const LOGOUT = 'LOGOUT'
 const LOGOUT_FULFILLED = 'LOGOUT_FULFILLED'
-
 
 let initialState = {
   data: null

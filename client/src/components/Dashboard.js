@@ -92,9 +92,7 @@ let mapStateToProps = state => {
     flowerIds: state.arrangements.flowerIds,
     vaseId: state.arrangements.vaseId,
     arrangementsData: state.arrangements.arrangementsData
-    
   }
-  
 }
 
 export default connect( mapStateToProps, { getFlowers, getVases, getDecor, createArrangement })(Dashboard)
