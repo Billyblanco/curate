@@ -8,7 +8,7 @@ const express = require('express')
     , vasesController = require('./controllers/productController')
     , decorController = require('./controllers/productController')
     , arrangementsController= require('./controllers/arrangementsController')
-    
+    , userController = require('./controllers/userController')
 
     
 const app = express()
@@ -45,6 +45,7 @@ app.get('/api/arrangements/flowers', arrangementsController.getArrangementsFlowe
 app.post('/api/arrangements', arrangementsController.createArrangement)
 app.delete('/api/arrangements/flowers/:id', arrangementsController.deleteArrangement)
 
+app.put('/api/currentUser', userController.updateEmail)
 
 const PORT = 4007
 app.listen(PORT, () => {

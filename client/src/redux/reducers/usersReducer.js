@@ -6,15 +6,16 @@ const LOGOUT = 'LOGOUT'
 const LOGOUT_FULFILLED = 'LOGOUT_FULFILLED'
 
 let initialState = {
-  data: null
+  user: null
 }
 
 export default function reducer(state = initialState, action){
   switch (action.type) {
     case GET_USER_FULFILLED:
-      return {...state, data: action.payload.data}
+      return {...state, user: action.payload.data}
     case LOGOUT_FULFILLED:
-      return {...state, data: null}
+      return {...state, user: null}
+    
     default: 
       return state
   }
@@ -33,3 +34,5 @@ export function logout() {
     payload: axios.get('/api/logout')
   }
 }
+
+

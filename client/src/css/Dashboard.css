@@ -3,6 +3,16 @@
   color: gray;
 }
 
+.landing-photo {
+  background-image: url(https://i.pinimg.com/originals/f6/90/e1/f690e1e74a4f82bf410e622f6de86d14.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 800px;
+  width: 1000px;
+  
+}
+
 .product-containers {
   padding-top: 30px;
   display: flex;

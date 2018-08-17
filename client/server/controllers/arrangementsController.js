@@ -14,7 +14,8 @@ module.exports = {
             if (arrangement.id === elem.id) {
               let flower = {
                 name: elem.flower_name,
-                imageUrl: elem.flower_image
+                imageUrl: elem.flower_image,
+                price: elem.flower_price
               }
               arrangement.flowers.push(flower)
             } else {
@@ -66,11 +67,13 @@ module.exports = {
 function createArrangement(elem) {
   let vase = {
     name: elem.vase_name, 
-    imageUrl: elem.vase_image
+    imageUrl: elem.vase_image,
+    price: elem.vase_price
   }
   let flower = {
     name: elem.flower_name,
-    imageUrl: elem.flower_image
+    imageUrl: elem.flower_image,
+    price: elem.flower_price
   }
   let arrangement = {
     id: elem.id,

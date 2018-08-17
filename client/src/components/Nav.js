@@ -5,22 +5,35 @@ import { Link } from 'react-router-dom'
 
 class Nav extends Component {
   
-  render() {
-    // console.log(this.props)
-    return (
+render() {
+  return (
   
-          this.props.location.pathname === '/'
-          ? 
-          null
-          :
+  this.props.location.pathname === '/' ? 
+  null :
         
-          <div className="navbar">
-            <div className="navbar-header">
-            <Link className='nave-title' to='/dashboard'><h2> C U R A T E</h2></Link>
-              <Link to='/'><h3>Logout</h3> </Link>
-      
-            </div>
-          </div>
+  <div className="navbar">
+    <div className="navbar-header">
+       <Link className='navbar-title' to='/dashboard'><h2> C U R A T E</h2></Link>
+    </div>
+
+     <ul className='navbar-left-container'>
+        <li>
+          <Link to='/'><i className="fas fa-home"></i></Link>
+        </li>
+        <li>
+          <Link to='/dashboard'>Design Board</Link>
+        </li>
+      </ul>
+            
+      <ul className='navbar-right-container'>
+        <li>
+          <Link to='/settings'><i className="fas fa-user-cog"></i></Link>
+        </li>
+        <li>
+          <Link to='/cart'><i className="fas fa-shopping-cart"></i></Link>
+        </li>
+     </ul>
+ </div>
         
 
     )

@@ -43,7 +43,9 @@ closeDecorModal = () => {this.setState({decorModal: false})}
 render() {
   console.log(this.props.arrangementsData)
   return (
+  
 <div>
+  <div className='landing-photo'></div>
 <div className="product-containers">
    <div className='product'><h2><b>FLOWERS</b></h2></div>
       <button className='product-button'
@@ -91,7 +93,7 @@ let mapStateToProps = state => {
     decorData: state.products.decorData, 
     flowerIds: state.arrangements.flowerIds,
     vaseId: state.arrangements.vaseId,
-    arrangementsData: state.arrangements.arrangementsData
+    arrangementsData: state.arrangements.arrangementsData,
   }
 }
 

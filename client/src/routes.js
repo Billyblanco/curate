@@ -11,6 +11,6 @@ export default (
       <Route exact path='/' component={Landing} /> 
       <Route path='/cart' component={Cart}/> 
       <Route path='/dashboard' component={Dashboard}/> 
-      <Route path='/setttings' component={Settings}/>
+      <Route path='/settings' component={Settings}/>
   </Switch> 
 )

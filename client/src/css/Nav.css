@@ -1,14 +1,32 @@
-.nav-container {
-  height: 60px;
+ul {
+  list-style: none;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  height: 80px;
   background-color: #DE8C78;
   color: white;
 }
 
-h2 {
-  float: left;
+.navbar-header {
+
 }
 
-h3 {
-  float: right;
-  padding-right: 30px;
+.navbar-title {
+
 }
+
+.navbar-left-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.navbar-right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+}
+

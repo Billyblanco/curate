@@ -58,7 +58,7 @@ export default connect(mapStateToProps, {addVase, getArrangementsFlowers, getVas
 const customStyles = {
   content: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     top: '30%',
     bottom: '40%',
     border: '0',

@@ -15,6 +15,7 @@ class Landing extends Component {
   }
 
   render() {
+    console.log(this.props.user)
     return (
       <div className='background'>
         <h1>CURATE</h1>
@@ -25,6 +26,7 @@ class Landing extends Component {
             :
             <button className="login-button" onClick={this.login}>LOGIN</button>}
           </div>
+          <Link to='/dashboard'><button>Go to your Designs</button></Link>
      </div>
     )
   }

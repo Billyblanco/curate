@@ -1,29 +1,48 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getFlowers } from '../redux/reducers/productReducer'
 import { addFlowersToArrangement } from '../redux/reducers/arrangementsReducer'
+import '../css/Flowers.css'
 
-function Flowers(props) {
+class Flowers extends Component {
 
+  state = {
+    displayImageText: false
+  }
 
+  displayImageTextTrue = () => {
+    this.setState({ displayImageText: true})
+  }
+
+  displayImageTextFalse = () => {
+    this.setState({ displayImageText: false })
+  }
+
+  render () {
   return (
     <div style={customStyles.content}>
       <div>
-        <button className='close-button' onClick={props.closeModal}>close</button>
+        <button className='close-button' onClick={this.props.closeModal}>close</button>
       </div>
-      { props.flowerData.map(flower => {
+      { this.props.flowerData.map(flower => {
         return (
           <div className="modal-flower-view">
-            <button onClick={ () => {props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
-            <img src={ flower.image_url} alt='flowers' height='500'/>
+            <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
+            
+            <img className='image'
+                onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}
+                src={ flower.image_url} alt='flowers' height='500'/>
+              <p>{flower.name}</p>
+            <p>${flower.price}.00</p>
           </div>
         )
       }) }
       <div>
-        <button onClick={props.showVaseModal}>Add Flowers To Vase</button>
+        <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
       </div>
     </div>
-  )
+   )
+  }
 }
 
 let mapStateToProps = state => {
@@ -39,7 +58,7 @@ const customStyles = {
   
   content: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     top: '30%',
     bottom: '50%',
     border: '0',
