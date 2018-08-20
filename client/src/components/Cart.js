@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getArrangementsFlowers } from '../redux/reducers/arrangementsReducer'
 import Arrangement from './Arrangements'
+import axios from 'axios'
+
 class Cart extends Component {
   
-  
+  checkout = () => {
+    axios.post('/api/checkout/').then( response => {
+      console.log('checkout', response.data)
+    })
+  }
 
   componentDidMount() {
     this.props.getArrangementsFlowers()
@@ -18,6 +24,7 @@ class Cart extends Component {
             return <Arrangement arrangement={arrangement}/>
           })
         }
+        <button onClick={ () => {this.checkout()}}>Checkout</button>
       </div>
     )
   }

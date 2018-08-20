@@ -14,11 +14,12 @@ componentDidMount () {
 
   render() {
     return (
-      <div className="App">
-      <Nav />
-      { routes }
-
-      </div>
+      
+        <div className="App">
+          <Nav />
+          { routes }  
+        </div>
+      
     );
   }
 }

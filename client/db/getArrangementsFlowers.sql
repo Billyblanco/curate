@@ -3,3 +3,10 @@ FROM arrangements a
 JOIN arrangements_flowers af ON a .id = af.arrangement_id
 JOIN flowers f ON af.flower_id = f.id
 JOIN vases v ON a.vase_id = v.id;
+
+
+-- select *
+-- from arrangements
+-- join arrangements_flowers on arrangement.id = arrangements_flowers.arrangement_id
+-- join flowers on arrangements_flowers.flower_id = flowers.id
+-- join vases on arrangement.vases_id = vases_id

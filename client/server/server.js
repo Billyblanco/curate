@@ -9,9 +9,12 @@ const express = require('express')
     , decorController = require('./controllers/productController')
     , arrangementsController= require('./controllers/arrangementsController')
     , userController = require('./controllers/userController')
+    , ordersController = require('./controllers/ordersController')
+   
 
-    
+
 const app = express()
+
 app.use(bodyParser.json())
   
 app.use(session({
@@ -44,8 +47,13 @@ app.get('/api/decor', decorController.getDecor)
 app.get('/api/arrangements/flowers', arrangementsController.getArrangementsFlowers)
 app.post('/api/arrangements', arrangementsController.createArrangement)
 app.delete('/api/arrangements/flowers/:id', arrangementsController.deleteArrangement)
-
+// Edit email 
 app.put('/api/currentUser', userController.updateEmail)
+
+// orders 
+app.post('/api/checkout', ordersController.checkout)
+
+
 
 const PORT = 4007
 app.listen(PORT, () => {

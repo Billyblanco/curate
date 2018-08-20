@@ -35,9 +35,10 @@ module.exports = {
   },
   createArrangement: async (req, res) =>  {
     let db = req.app.set('db')
+    let { user } = req.session
     let { vaseId, flowerIds } = req.body
     
-    let newArrangements = await db.createArrangement([vaseId])
+    let newArrangements = await db.createArrangement([user.id, vaseId])
     let newArrangement = newArrangements[0]
 
     let arrangementsFlowerResponse = await Promise.all(flowerIds.map( async flowerId => {

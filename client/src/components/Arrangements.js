@@ -34,7 +34,7 @@ class Arrangements extends Component {
                 
                 <div className='delete-button'>
                 <button onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Delete Arrangement</button></div>
-                <div> Total: ${totalPrice} </div>
+                <div> Total: ${Math.floor(totalPrice *100) /100} </div>
           </div>
      )
    }
