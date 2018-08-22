@@ -60,6 +60,7 @@ const customStyles = {
     display: 'flex',
     flexDirection: 'column',
     top: '30%',
+    right: '60%',
     bottom: '50%',
     border: '0',
     borderRadius: '4px',

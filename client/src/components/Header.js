@@ -1,0 +1,30 @@
+import React, { Component } from 'react'
+import '../css/Header.css'
+import logo from '../img/modern-logo.png'
+
+class Header extends Component {
+  render () {
+    return (
+      <div className='header'>
+        <div className='header__logo-box'>
+            {/* <img className='header__logo'
+                  src={logo}
+                  alt='logo'/> */}
+        </div>
+
+        <div className='header__text-box'>
+          <h1 className='heading-primary'> 
+            <span className='heading-primary--main'>Curate
+                  </span>
+            <span className='heading-primary--sub'> Something Thought Provoking </span>
+          </h1>
+          <br></br>
+            <a href='#'
+              className='button button--white button--animated'>Start Designing</a>
+        </div>
+   </div>
+     
+    )
+  }
+}
+export default Header;

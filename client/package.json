@@ -10,17 +10,18 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "massive": "^5.2.0",
+    "parcel-bundler": "^1.9.7",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-modal": "^3.5.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^2.0.1",
     "react-toastify": "^4.2.0",
     "redux": "^4.0.0",
     "redux-promise-middleware": "^5.1.1"
-    
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,5 +43,8 @@
     "/api": {
       "target": "http://localhost:4007"
     }
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3"
   }
 }

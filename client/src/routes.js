@@ -4,7 +4,6 @@ import Cart from './components/Cart'
 import Dashboard from './components/Dashboard'
 import Landing from './components/Landing'
 import Settings from './components/Settings'
-import CheckoutForm from './components/CheckoutForm'
 
 export default (
   <Switch> 

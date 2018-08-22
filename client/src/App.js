@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import routes from './routes'
-import Nav from './components/Nav'
+// import Nav from './components/Nav'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {getUser} from './redux/reducers/usersReducer'
@@ -16,7 +16,7 @@ componentDidMount () {
     return (
       
         <div className="App">
-          <Nav />
+          {/* <Nav /> */}
           { routes }  
         </div>
       

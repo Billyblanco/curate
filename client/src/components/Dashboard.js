@@ -6,6 +6,8 @@ import { getFlowers, getVases, getDecor } from '../redux/reducers/productReducer
 import { createArrangement } from '../redux/reducers/arrangementsReducer'
 import Flowers from './Flowers'
 import Vases from './Vases'
+import '../css/Dashboard.css'
+import Header from './Header'
 Modal.setAppElement('#root')
 
 
@@ -45,18 +47,22 @@ render() {
   return (
   
 <div>
-  <div className='landing-photo'></div>
-<div className="product-containers">
+  <Header />
+  <div className='mid'>
+      <span>ADD SOMETHING HERE</span>
+  </div>
+<div className='main-body'>
    <div className='product'><h2><b>FLOWERS</b></h2></div>
       <button className='product-button'
               onClick={this.toggleFlowerModal}>Click to Add</button>
-
-  <Modal 
+ <div className='flower-modal'> 
+  <Modal className='flower-inner-modal'
     isOpen={this.state.flowerModal}
     onRequestClose={this.closeFlowerModal}>
-    <Flowers closeModal={this.closeFlowerModal} showVaseModal={this.toggleVaseModal}/>
+    <Flowers closeModal={this.closeFlowerModal} 
+    showVaseModal={this.toggleVaseModal}/>
   </Modal>
-
+</div>
    <div className="product"><h2>VASE</h2></div>
      <button className='product-button'
              onClick={this.toggleVaseModal}>Click to Add</button>

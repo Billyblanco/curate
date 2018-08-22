@@ -25,12 +25,12 @@ export default function reducer ( state = initialState, action) {
       return {...state, arrangementsData: action.payload}
     case DELETE_ARRANGEMENT + FULFILLED:
       let { id } = action.payload
-      console.log(111111111, action.payload)
+      // console.log(111111111, action.payload)
       let newArrangementsData = state.arrangementsData.filter( arrangement => {
         return !(arrangement.id === Number(id))
       })
-      console.log(222222222, newArrangementsData.length)
-      console.log(3333333333, state.arrangementsData.length)
+      // console.log(222222222, newArrangementsData.length)
+      // console.log(3333333333, state.arrangementsData.length)
       return { ...state, arrangementsData: newArrangementsData }
   default:
       return state

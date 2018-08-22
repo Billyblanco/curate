@@ -5,17 +5,9 @@ ul {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-  height: 80px;
+  height: 20px;
   background-color: #DE8C78;
   color: white;
-}
-
-.navbar-header {
-
-}
-
-.navbar-title {
-
 }
 
 .navbar-left-container {
@@ -30,3 +22,7 @@ ul {
   align-items: right;
 }
 
+
+
+
+ 

@@ -43,16 +43,17 @@ app.get('/api/flowers', flowerController.getFlowers)
 app.get('/api/vases', vasesController.getVases)
 app.get('/api/decor', decorController.getDecor)
 
-// Create Arrangements and Get arrangements from DB
+// Arrangements DB
 app.get('/api/arrangements/flowers', arrangementsController.getArrangementsFlowers)
 app.post('/api/arrangements', arrangementsController.createArrangement)
 app.delete('/api/arrangements/flowers/:id', arrangementsController.deleteArrangement)
-// Edit email 
+
+// Edit Email 
 app.put('/api/currentUser', userController.updateEmail)
 
-// orders 
+// Orders 
 app.post('/api/checkout', ordersController.checkout)
-
+app.delete('/api/arrangements/:id')
 
 
 const PORT = 4007
