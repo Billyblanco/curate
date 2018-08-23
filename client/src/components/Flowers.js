@@ -7,8 +7,14 @@ import '../css/Flowers.css'
 class Flowers extends Component {
 
   state = {
-    displayImageText: false
+    displayImageText: false,
+    searchFlowers: ''
   }
+updateFlowersSearch = (e) => {
+  this.setState({
+    searchFlowers: e.target.value.substr(0, 26)
+  })
+}
 
   displayImageTextTrue = () => {
     this.setState({ displayImageText: true})
@@ -19,12 +25,23 @@ class Flowers extends Component {
   }
 
   render () {
+    
+    const { searchFlowers } = this.state
+    const filteredFlowers = this.props.flowerData.filter( flower => {
+      return flower.name.toLowerCase().indexOf(searchFlowers.toLowerCase()) !== -1
+    })
   return (
     <div style={customStyles.content}>
       <div>
         <button className='close-button' onClick={this.props.closeModal}>close</button>
       </div>
-      { this.props.flowerData.map(flower => {
+          <div className='searchbar'>
+              <p>Search Flowers</p>
+            <input type='text' 
+                   value={this.state.searchFLowers}
+                   onChange={this.updateFlowersSearch}/>
+          </div>
+      { filteredFlowers.map(flower => {
         return (
           <div className="modal-flower-view">
             <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
@@ -36,7 +53,9 @@ class Flowers extends Component {
             <p>${flower.price}.00</p>
           </div>
         )
-      }) }
+      })}
+          
+     
       <div>
         <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
       </div>

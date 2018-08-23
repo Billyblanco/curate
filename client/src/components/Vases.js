@@ -7,6 +7,10 @@ import axios from 'axios'
 
 class Vases extends Component {
 
+state = {
+  search: ''
+}
+
 createArrangement = (vaseId, flowerIds) => {
   axios.post('/api/arrangements', {vaseId, flowerIds}).then(response => {
     this.props.getArrangementsFlowers()
@@ -14,19 +18,36 @@ createArrangement = (vaseId, flowerIds) => {
   })
 }
 
+updateSearch = (e) => {
+  this.setState({
+    search: e.target.value.substr(0,20)
+  })
+}
 render () {
   let { vaseId, flowerIds } = this.props
-  console.log(vaseId, flowerIds)
+  // console.log(vaseId, flowerIds)
+  const { search } = this.state
+  const filteredVases = this.props.vasesData.filter( vase => {
+    return vase.type.toLowerCase().indexOf(search.toLowerCase()) !== -1
+  })
   return (
     <div style={customStyles.content}>
       <div>
         <button className='close-button'onClick={this.props.closeModal}>close</button>
       </div>
-    { this.props.vasesData.map(vases => {
+          <div className='searchbar'>
+            <p>Search Vase Type</p>
+              <input type='text' placeholder='ex. metal' value={this.state.search}
+              onChange={this.updateSearch}/>
+          </div>
+    { filteredVases.map(vases => {
       return (
       <div>
         <button onClick={() => {this.props.addVase(vases.id)}}>Select Vase</button>
-        <img src={ vases.image_url } alt='vases' height='500'/>
+        <p>{vases.name}</p>
+        <p>{vases.type}</p>
+        <img 
+        src={ vases.image_url } alt='vases' height='500'/>
       </div>
         )
     })
