@@ -1,7 +1,8 @@
 * {
   margin: 0;
-  padding: 0;
+  
   box-sizing: border-box;
+ 
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #36454f;
+  background-color: #E0E0E0;
 }
 
 
@@ -21,18 +23,27 @@ body {
   overflow: auto;
   border: none;
 }
+.mid {
+  padding: 100px;
+  text-align: center;
+  line-height: 2;
+  font-size: 28px;
+}
+
 
 .main-body {
   padding-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-bottom: 100px;
 }
 
 .card-container {
   position: relative;
   height: 400px;
   width: 250px;
+  border-radius: 20px;
   
 }
 .card {
@@ -40,120 +51,88 @@ body {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: all .8s ease;
-
+  transition: all 1s ease;
+  
 }
+
 .card:hover {
  transform: rotateY(180deg)
 }
+
 .front {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: plum;
-  
+  text-align: center;
+  padding-top: 80px;
+  font-size: 30px;
+  border-radius: 3px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.125);
 }
+
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: salmon;
-  
-  transform: rotateY(180deg)
-}
- 
-
-
-
-
-
-/* .product-side-front {
-  background-color: salmon;
-  height: 400px;
-  width: 250px;
-  position: absolute;
-  top: 0;
-  left: 0;
- 
-}
-.product-side-back {
-  background-color: plum;
-  height: 400px;
-  width: 250px;
   transform: rotateY(180deg);
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
+  text-align: center;
+  padding-top: 80px;
+  background-image: linear-gradient(to top, 
+ pink,
+ salmon,
+ salmon
+ );
+ border-radius: 3px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.125);
 }
 
-.product-side-front:hover {
-  transform: rotateY(180deg);
-  transition: all .9s;
-  
-}
-.product-side-back:hover {
-  transform: rotateY(0);
-  transition: all .9s;
-  visibility: visible;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
- */
-
-/* 
-
-.landing-photo {
-  background-image: url(https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-0.3.5&s=904642658ed9a7ecf0253800bc53a991&auto=format&fit=crop&w=975&q=80);
+.front-one {
+  background-image:url(https://static1.squarespace.com/static/5920065b6a49631995a32945/59960ec359cc68e96b479ac9/5ad4a1ced53554bee2772999/1523884506626/?format=300w);
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: center;
+  
+}
+.front-two {
+  background-image: url(https://www.accentdecor.com/globalassets/product-images/large/paradox_2_.jpg);
   background-size: cover;
-  height: 800px;
-  width: 1300px;
+  background-repeat: no-repeat;
+}
+
+.front-three {
+  background-image: url(https://www.accentdecor.com/globalassets/product-images/large/hepburn_2_.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.front h2 {
+  font-weight: 900;
+  text-align: left;
+  position: absolute;
+  top: 6rem;
+  left:2.7rem;
+  background-image: linear-gradient(to right bottom, 
+  rgba(255, 192, 203, 0.632),
+  rgba(255, 127, 80, 0.562));
+  border-radius: 5px;
+  color: #36454f;
+  padding:2px;
+}
+
+.back span {
+  font-size: 3.3rem;
+  text-align: center; 
+  line-height: 2rem;
+  font-weight: 500;
   
 }
 
-
-
-
-
-.product {
-  color: gray;
+.back .product-button {
+ position: absolute;
+ top: 80%;
+ left:55%;
+ transform: translate(-60%, -40%);
+ padding: 20px;
+ border-radius: 15px;
 }
-
-button {
-  height: 60px;
-  width: 200px;
-  background-color: #DE8C78;
-  color: white;
-  font-size: 20px; 
-  border: none;
-  
-}
-
-.close-button {
-  background-color: #5C5C5C;
-  width: 100px;
-}
-
-.modal-flower-view {
-  margin: 0
-}
-
-@media (max-width 600px) {
- 
-
-} */

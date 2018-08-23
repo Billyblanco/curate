@@ -50,14 +50,17 @@ render() {
 <div>
   <Header />
   <div className='mid'>
-      <span>ADD SOMETHING HERE</span>
+  <h1>  CHOOSE YOUR ELEMENTS </h1>
   </div>
 <div className='main-body'>
+   
     <div className='card-container'>
       <div className='card'>
-          <div className='front'><h2><b>FLEUR</b></h2>
+          <div className='front front-one'><h2><b>FLEUR</b></h2>
           </div>
-            <div className='back'> SOME TEXT
+            <div className='back back-one'> 
+              <span> Select From a Variation of Locally Grown Flowers
+              </span>   
                 <button className='product-button'
                         onClick={this.toggleFlowerModal}>Click to Add</button>
                 </div>
@@ -72,8 +75,9 @@ render() {
   </Modal>
   <div className='card-container'>
     <div className='card'>
-      <div className='front'><h2>VASE</h2> </div>
-         <div className='back'> SOME TEXT
+      <div className='front front-two'><h2>VASE</h2> </div>
+         <div className='back back-two'> 
+            <span>Pick the Perfect Vase for Any Style</span>
           <button className='product-button'
                   onClick={this.toggleVaseModal}>Click to Add</button> 
           </div>
@@ -87,8 +91,9 @@ render() {
    </Modal>
    <div className='card-container'>
       <div className='card'>
-        <div className='front'><h2>DECOR</h2></div>
-          <div className='back'> SOME TEXT
+        <div className='front front-three'><h2>DECOR</h2></div>
+          <div className='back back-three'> 
+              <span>Customize with Lanterns, Table Accents, Custom Candle Holders</span>
              <button className='product-button'
                      onClick={this.toggleDecorModal}>Click to Add</button>
             </div>
@@ -105,9 +110,12 @@ render() {
     })
   }
   </Modal>
-    </div> 
-    {/* <Footer /> */}
+</div> 
+        <div>
+          <Footer />
+        </div>
 </div>
+
     )
   }
 }
