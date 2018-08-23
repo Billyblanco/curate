@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getArrangementsFlowers } from '../redux/reducers/arrangementsReducer'
 import Arrangement from './Arrangements'
 import axios from 'axios'
+import '../css/Cart.css'
 
 class Cart extends Component {
   

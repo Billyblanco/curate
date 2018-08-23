@@ -9,7 +9,7 @@ body {
    font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #596275;
+  color: #36454f;
 }
 
 
@@ -22,18 +22,82 @@ body {
   border: none;
 }
 
-.mid {
-  height: 20vh;
-  width: 100%;
-  background-color: #434343;
-}
 .main-body {
   padding-top: 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around ;
-  align-items: center;
-  text-align: center;
+  justify-content: space-around;
+}
+
+.card-container {
+  position: relative;
+  height: 400px;
+  width: 250px;
+  
+}
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all .8s ease;
+
+}
+.card:hover {
+ transform: rotateY(180deg)
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: plum;
+  
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: salmon;
+  
+  transform: rotateY(180deg)
+}
+ 
+
+
+
+
+
+/* .product-side-front {
+  background-color: salmon;
+  height: 400px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+ 
+}
+.product-side-back {
+  background-color: plum;
+  height: 400px;
+  width: 250px;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.product-side-front:hover {
+  transform: rotateY(180deg);
+  transition: all .9s;
+  
+}
+.product-side-back:hover {
+  transform: rotateY(0);
+  transition: all .9s;
+  visibility: visible;
 }
 
 
@@ -48,11 +112,7 @@ body {
 
 
 
-
-
-
-
-
+ */
 
 /* 
 
@@ -69,13 +129,6 @@ body {
 
 
 
-.product-button {
-  background-color: #DFBFB8;
-  height: 30%;
-  border: none;
-  padding: 100px;
-  border-radius: 30%;
-}
 
 .product {
   color: gray;

@@ -23,10 +23,9 @@ class Arrangements extends Component {
                   totalPrice += flowerPrice
                     return (
                   
-                      <div>
-                        <p>{flower.name}</p>
-                        <img src={flower.imageUrl} alt='flower' height='100'/>
-                        
+                      <div className='flower-container'>
+                          <p>{flower.name}</p>
+                          <img src={flower.imageUrl} alt='flower' height='100'/>
                       </div>
                     )
                   })
@@ -34,7 +33,7 @@ class Arrangements extends Component {
                 
                 <div className='delete-button'>
                 <button onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Delete Arrangement</button></div>
-                <div> Total: ${Math.floor(totalPrice *100) /100} </div>
+               
           </div>
      )
    }

@@ -7,16 +7,14 @@ class Header extends Component {
     return (
       <div className='header'>
         <div className='header__logo-box'>
-            {/* <img className='header__logo'
-                  src={logo}
-                  alt='logo'/> */}
+            
         </div>
 
         <div className='header__text-box'>
           <h1 className='heading-primary'> 
             <span className='heading-primary--main'>Curate
                   </span>
-            <span className='heading-primary--sub'> Something Thought Provoking </span>
+            <span className='heading-primary--sub'> Something </span>
           </h1>
           <br></br>
             <a href='#'

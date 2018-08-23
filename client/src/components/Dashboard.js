@@ -8,6 +8,7 @@ import Flowers from './Flowers'
 import Vases from './Vases'
 import '../css/Dashboard.css'
 import Header from './Header'
+import Footer from './Footer'
 Modal.setAppElement('#root')
 
 
@@ -52,31 +53,47 @@ render() {
       <span>ADD SOMETHING HERE</span>
   </div>
 <div className='main-body'>
-   <div className='product'><h2><b>FLOWERS</b></h2></div>
-      <button className='product-button'
-              onClick={this.toggleFlowerModal}>Click to Add</button>
- <div className='flower-modal'> 
+    <div className='card-container'>
+      <div className='card'>
+          <div className='front'><h2><b>FLEUR</b></h2>
+          </div>
+            <div className='back'> SOME TEXT
+                <button className='product-button'
+                        onClick={this.toggleFlowerModal}>Click to Add</button>
+                </div>
+            </div>
+        </div>
+
   <Modal className='flower-inner-modal'
     isOpen={this.state.flowerModal}
     onRequestClose={this.closeFlowerModal}>
     <Flowers closeModal={this.closeFlowerModal} 
     showVaseModal={this.toggleVaseModal}/>
   </Modal>
-</div>
-   <div className="product"><h2>VASE</h2></div>
-     <button className='product-button'
-             onClick={this.toggleVaseModal}>Click to Add</button>
+  <div className='card-container'>
+    <div className='card'>
+      <div className='front'><h2>VASE</h2> </div>
+         <div className='back'> SOME TEXT
+          <button className='product-button'
+                  onClick={this.toggleVaseModal}>Click to Add</button> 
+          </div>
+      </div>
+  </div>
 
     <Modal  isOpen={this.state.vaseModal}
             onRequestClose={this.closeVaseModal}>
         <Vases closeModal={this.closeVaseModal}
                 showFlowers={this.toggleFlowerModal}/>
    </Modal>
-
-    <div className="product"><h2>DECOR</h2></div>
-        <button className='product-button'
-                onClick={this.toggleDecorModal}>Click to Add</button>
-
+   <div className='card-container'>
+      <div className='card'>
+        <div className='front'><h2>DECOR</h2></div>
+          <div className='back'> SOME TEXT
+             <button className='product-button'
+                     onClick={this.toggleDecorModal}>Click to Add</button>
+            </div>
+        </div>
+    </div>
   <Modal    isOpen={this.state.decorModal}
             onRequestClose={this.closeDecorModal}>
 
@@ -89,6 +106,7 @@ render() {
   }
   </Modal>
     </div> 
+    {/* <Footer /> */}
 </div>
     )
   }
