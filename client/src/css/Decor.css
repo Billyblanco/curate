@@ -1,4 +1,4 @@
-.flower-modal-card {
+.decor-modal-card {
   border: 11px solid rgba(128, 128, 128, 0.733);
   background-color: white;
   border-radius: 14px;
@@ -7,7 +7,7 @@
   margin: 5px;
 }
 
-.flower-modal-card button {
+.decor-modal-card button {
   padding: 25px;
   border-radius: 15px;
   position: relative;
@@ -21,23 +21,31 @@
   font-size: 16px;
   text-transform: uppercase;
 }
-.flower-modal-card p {
+.decor-modal-card p {
   position: relative;
   top: 20rem;
   left: 30rem;
 }
+
 .searchbar input {
   position: absolute;
-  top: 3rem;
-  right: 10rem;
+  top: 3.7rem;
+  right: 59rem;
   box-shadow: 2px 2px #36454fbd;
 }
-.close-button {
+
+.finish-buttons {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+.finish-buttons button {
   padding: 15px;
-  border-radius: 10px;
-  background-color: rgba(211, 211, 211, 0.363);
-  font-size: 14px;
-  line-height: 1.7rem;
-  font-weight: 300;
-  margin-top: 30px;
+  border-radius: 15px;
+  background-color: #36454f;
+  color:white;
+  line-height: 1.9rem;
+  font-weight: 700;
+  font-size: 24px;
 }

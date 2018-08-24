@@ -31,8 +31,9 @@ class Arrangements extends Component {
                   })
                 }
                 
-                <div className='delete-button'>
-                <button onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Delete Arrangement</button></div>
+                <div>
+                <button className='delete-button'
+                onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Remove</button></div>
                
           </div>
      )

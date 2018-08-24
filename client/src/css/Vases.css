@@ -1,0 +1,27 @@
+.modal-card {
+  border: 11px solid rgba(128, 128, 128, 0.733);
+  border-radius: 14px;
+  font-size: 28px;
+  font-weight: 900;
+  height: 570px;
+  margin:3px;
+  background-color: white;
+}
+.modal-card button {
+  padding: 25px;
+  margin: 30px;
+  border-radius: 15px;
+  float: right;
+  background-color: #36454f;
+  color: white;
+  line-height: 1.7rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.modal-card p {
+  position: relative;
+  top: 20rem;
+  left: 30rem;
+}

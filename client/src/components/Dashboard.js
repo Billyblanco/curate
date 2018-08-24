@@ -6,6 +6,7 @@ import { getFlowers, getVases, getDecor } from '../redux/reducers/productReducer
 import { createArrangement } from '../redux/reducers/arrangementsReducer'
 import Flowers from './Flowers'
 import Vases from './Vases'
+import Decor from './Decor'
 import '../css/Dashboard.css'
 import Header from './Header'
 import Footer from './Footer'
@@ -30,10 +31,14 @@ class Dashboard extends Component {
   }
 
 toggleFlowerModal = () => {
-  this.setState({ flowerModal: !this.state.flowerModal})}
+  this.setState({ 
+    flowerModal: !this.state.flowerModal
+  })}
 
 toggleVaseModal = () => {
-  this.setState({ vaseModal: !this.state.vaseModal})}
+  this.setState({ 
+    vaseModal: !this.state.vaseModal
+  })}
 
 toggleDecorModal = () => {
   this.setState({ decorModal: !this.state.decorModal})}
@@ -87,7 +92,7 @@ render() {
     <Modal  isOpen={this.state.vaseModal}
             onRequestClose={this.closeVaseModal}>
         <Vases closeModal={this.closeVaseModal}
-                showFlowers={this.toggleFlowerModal}/>
+              showFlowerModal={this.toggleFlowerModal}/>
    </Modal>
    <div className='card-container'>
       <div className='card'>
@@ -101,14 +106,8 @@ render() {
     </div>
   <Modal    isOpen={this.state.decorModal}
             onRequestClose={this.closeDecorModal}>
-
-  <button onClick={this.closeDecorModal}>close</button>
-  { this.props.decorData.map(decor => {
-    return (
-       <img src={ decor.image_url } alt='decor' height='400'/>
-      )
-    })
-  }
+      < Decor closeModal={this.closeDecorModal}
+              showVaseModal={this.toggleVaseModal}/>
   </Modal>
 </div> 
         <div>
@@ -130,6 +129,7 @@ let mapStateToProps = state => {
 }
 
 export default connect( mapStateToProps, { getFlowers, getVases, getDecor, createArrangement })(Dashboard)
+
 
 
 

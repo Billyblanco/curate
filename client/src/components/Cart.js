@@ -20,6 +20,11 @@ class Cart extends Component {
    
     return (
       <div>
+        <div className='cart-header'>
+          <h1>CART</h1>
+            <button>CONTINUE SHOPPING</button>
+            <button>CLEAR</button>
+        </div>
         {
           this.props.arrangementsData.map( arrangement => {
             return <Arrangement arrangement={arrangement}/>

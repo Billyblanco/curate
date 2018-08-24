@@ -31,26 +31,27 @@ updateFlowersSearch = (e) => {
       return flower.name.toLowerCase().indexOf(searchFlowers.toLowerCase()) !== -1
     })
   return (
-    <div style={customStyles.content}>
+    <div>
       <div>
         <button className='close-button' onClick={this.props.closeModal}>close</button>
       </div>
           <div className='searchbar'>
-              <p>Search Flowers</p>
-            <input type='text' 
+            <input type='text' placeholder='Search Flowers'
                    value={this.state.searchFLowers}
-                   onChange={this.updateFlowersSearch}/>
+                   onChange={this.updateFlowersSearch}
+                   width='500'/>
           </div>
       { filteredFlowers.map(flower => {
         return (
-          <div className="modal-flower-view">
+          <div className="flower-modal-card">
             <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
             
+            <p>{flower.name}</p>
+            <p>${flower.price}.00</p>
             <img className='image'
                 onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}
-                src={ flower.image_url} alt='flowers' height='500'/>
-              <p>{flower.name}</p>
-            <p>${flower.price}.00</p>
+                src={ flower.image_url} alt='flowers' height='500' width='350'/>
+              
           </div>
         )
       })}
@@ -73,17 +74,3 @@ let mapStateToProps = state => {
 
 export default connect(mapStateToProps, {  addFlowersToArrangement, getFlowers})(Flowers)
 
-const customStyles = {
-  
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    top: '30%',
-    right: '60%',
-    bottom: '50%',
-    border: '0',
-    borderRadius: '4px',
-    padding: '10px',
-    
-  }
-}

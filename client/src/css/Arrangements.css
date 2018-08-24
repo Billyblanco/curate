@@ -7,10 +7,28 @@
   flex-direction: row;
   flex-wrap: wrap;
   border: 10px solid gray;
-  width: 700px;
+  width: 900px;
   margin: 20px;
 }
 
-.button {
-  
+.cart-header button {
+  padding: 30px;
+  background-color: #36454f;
+  color: white;
+  font-size: 22px;
+  line-height: 1.7rem;
+  border-radius: 15px;
+  position: relative;
+  float: right;
+}
+
+.delete-button {
+  padding: 11px;
+  background-color: rgba(128, 128, 128, 0.384);
+  color: white;
+  font-size: 16px;
+  line-height: 1.2rem;
+  border-radius: 15px;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
 }

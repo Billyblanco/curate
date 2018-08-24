@@ -4,6 +4,7 @@ import { addVase, getArrangementsFlowers, createArrangement } from '../redux/red
 import { getVases } from '../redux/reducers/productReducer'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import '../css/Vases.css'
 
 class Vases extends Component {
 
@@ -36,25 +37,26 @@ render () {
         <button className='close-button'onClick={this.props.closeModal}>close</button>
       </div>
           <div className='searchbar'>
-            <p>Search Vase Type</p>
-              <input type='text' placeholder='ex. metal' value={this.state.search}
+              <input type='text' placeholder='Search Vases' value={this.state.search}
               onChange={this.updateSearch}/>
           </div>
     { filteredVases.map(vases => {
       return (
-      <div>
+      <div className='modal-card'>
         <button onClick={() => {this.props.addVase(vases.id)}}>Select Vase</button>
         <p>{vases.name}</p>
-        <p>{vases.type}</p>
+        <p>${vases.price}</p>
         <img 
-        src={ vases.image_url } alt='vases' height='500'/>
+        src={ vases.image_url } alt='vases' height='450' width='450'/>
       </div>
         )
     })
   }
-  <div>
-    <button onClick={this.props.showFolowers}>Go Back to Flowers</button>
-    <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement!</button></Link>
+  <div className='finish-buttons'>
+    <button
+    onClick={this.props.showFlowerModal}
+    >Go Back to Flowers</button>
+        <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement!</button></Link>
     
   </div>
     </div>
@@ -84,7 +86,7 @@ const customStyles = {
     bottom: '40%',
     border: '0',
     borderRadius: '4px',
-    padding: '10px'
+    padding: '10px',
   }
 }
 
