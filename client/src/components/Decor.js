@@ -21,27 +21,30 @@ class Decor extends Component {
     })
     return (
        <div className='searchbar'>
-         <button className='close-button'onClick={this.props.closeDecorModal}>Close</button>
+         <button className='close-button'onClick={this.props.closeModal}>Close</button>
            <input type='text' placeholder='ex. candle holder'
             value={this.state.search}
             onChange={this.updateSearch}/>
   { 
     filteredDecor.map(decor => {
     return (
-      <div className='decor-modal-card'>
-      <button>Add Decor Item</button>
-          <p>{decor.name}</p>
-          <p>${decor.price}</p>
-          <img src={ decor.image_url } alt='decor' height='400' width='400'/>
-      </div>
+      
+        <div className='decor-modal-card'>
+          <button>Add Decor Item</button>
+              <p>{decor.name}</p>
+              <p>${decor.price}</p>
+              <p>{decor.description}</p>
+              <img src={ decor.image_url } alt='decor' height='400' width='400'/>
+        </div>
       )
     })
   }
   <div className='finish-buttons'>
-    <button>Go Back to Vases</button>
+    <button onClick={this.props.showVaseModal}>Go Back to Vases</button>
     <button>Add Decor to Cart!</button>
   </div>
       </div>
+     
     )
   }
 }

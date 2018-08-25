@@ -49,8 +49,9 @@ app.post('/api/arrangements', arrangementsController.createArrangement)
 app.delete('/api/arrangements/flowers/:id', arrangementsController.deleteArrangement)
 
 // Edit Email 
-app.put('/api/currentUser', userController.updateEmail)
-
+app.put('/api/currentUser/email', userController.updateEmail)
+app.put('/api/currentUser/username', userController.updateUsername)
+app.put('/api/currentUser/password', userController.updatePassword)
 // Orders 
 app.post('/api/checkout', ordersController.checkout)
 app.delete('/api/arrangements/:id')

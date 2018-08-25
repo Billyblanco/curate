@@ -13,12 +13,20 @@ body {
   line-height: 1.7;
   box-sizing: border-box; }
 
+  
+  
+  /* #C5BDDC  really pretty baby purple*/
+  /* rgb(225, 150, 109), 
+  rgba(242, 147, 136, 0.94),
+  rgba(198, 105, 89, 0.94) */
 .header {
-  height: 100vh;
-  background-image: linear-gradient(to bottom right, 
-  #FFE29F, 
-  rgba(255, 169, 159, 0.94),
-  rgba(255, 113, 153, 0.625)
+  height: 90vh;
+  background-image: linear-gradient(to bottom, 
+ #DE8C78,
+ #DE8C78,
+ #DFBFB8,
+ rgba(248, 202, 206, 0.884)
+  
    ),
    
   url(https://i.pinimg.com/564x/ff/74/4a/ff744ae74909ae9f9dbc7ac22a17c000.jpg);

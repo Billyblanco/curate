@@ -28,7 +28,7 @@
 }
 .searchbar input {
   position: absolute;
-  top: 3rem;
+  top: 0;
   right: 10rem;
   box-shadow: 2px 2px #36454fbd;
 }

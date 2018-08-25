@@ -19,12 +19,13 @@ class Arrangements extends Component {
   
                 {
                   arrangement.flowers.map( flower => {
-                  let flowerPrice = +flower.price
+                  let flowerPrice = Math.floor(+flower.price)
                   totalPrice += flowerPrice
                     return (
                   
                       <div className='flower-container'>
                           <p>{flower.name}</p>
+          
                           <img src={flower.imageUrl} alt='flower' height='100'/>
                       </div>
                     )
@@ -34,7 +35,7 @@ class Arrangements extends Component {
                 <div>
                 <button className='delete-button'
                 onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Remove</button></div>
-               
+               <p>{totalPrice}</p>
           </div>
      )
    }
