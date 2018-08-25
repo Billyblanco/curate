@@ -56,7 +56,7 @@ render () {
     <button
     onClick={this.props.showFlowerModal}
     >Go Back to Flowers</button>
-        <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement!</button></Link>
+        <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement Add Decor</button></Link>
     
   </div>
     </div>

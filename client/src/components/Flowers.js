@@ -47,7 +47,7 @@ updateFlowersSearch = (e) => {
             <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
             
             <p>{flower.name}</p>
-            <p>${flower.price}.00</p>
+            <p>${flower.price}</p>
             <img className='image'
                 onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}
                 src={ flower.image_url} alt='flowers' height='450' width='350'/>

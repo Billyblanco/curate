@@ -32,16 +32,24 @@ class Dashboard extends Component {
 
 toggleFlowerModal = () => {
   this.setState({ 
-    flowerModal: !this.state.flowerModal
+    flowerModal: !this.state.flowerModal,
+    vaseModal: false,
+    decorModal: false
   })}
 
 toggleVaseModal = () => {
   this.setState({ 
-    vaseModal: !this.state.vaseModal
+    vaseModal: !this.state.vaseModal,
+    flowerModal: false,
+    decorModal: false
   })}
 
 toggleDecorModal = () => {
-  this.setState({ decorModal: !this.state.decorModal})}
+  this.setState({ 
+    decorModal: !this.state.decorModal,
+    vaseModal: false,
+    flowerModal: false
+  })}
 
 closeFlowerModal = () => {this.setState({flowerModal: false })}
 closeVaseModal = () => {this.setState({ vaseModal: false})}
