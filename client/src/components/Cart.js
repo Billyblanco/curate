@@ -12,6 +12,8 @@ class Cart extends Component {
       console.log('checkout', response.data)
     })
   }
+  componentWillReceiveProps(props) {
+  }
 
   componentDidMount() {
     this.props.getArrangementsFlowers()
@@ -22,15 +24,16 @@ class Cart extends Component {
       <div>
         <div className='cart-header'>
           <h1>CART</h1>
+          <button onClick={ () => {this.checkout()}}>Checkout</button>
             <button>CONTINUE SHOPPING</button>
-            <button>CLEAR</button>
         </div>
         {
           this.props.arrangementsData.map( arrangement => {
+            console.log(1111111, arrangement)
             return <Arrangement arrangement={arrangement}/>
           })
         }
-        <button onClick={ () => {this.checkout()}}>Checkout</button>
+        
       </div>
     )
   }

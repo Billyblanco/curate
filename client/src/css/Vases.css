@@ -25,3 +25,10 @@
   top: 20rem;
   left: 30rem;
 }
+
+.searchbar {
+  position: absolute;
+  top: 0;
+  right: 8rem;
+  box-shadow: 2px 2px #36454fbd;
+}

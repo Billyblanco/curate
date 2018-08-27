@@ -9,6 +9,7 @@
   border: 10px solid gray;
   width: 900px;
   margin: 20px;
+  
 }
 
 .cart-header button {
@@ -20,6 +21,7 @@
   border-radius: 15px;
   position: relative;
   float: right;
+  margin: 5px;
 }
 
 .delete-button {
@@ -31,4 +33,7 @@
   border-radius: 15px;
   overflow-wrap: break-word;
   text-transform: uppercase;
+  position: relative;
+  top: 0rem;
+  left: 15rem;
 }
