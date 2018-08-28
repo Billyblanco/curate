@@ -20,7 +20,7 @@ body {
   rgba(242, 147, 136, 0.94),
   rgba(198, 105, 89, 0.94) */
 .header {
-  height: 90vh;
+  height: 40vh;
   background-image: linear-gradient(to bottom, 
  #DE8C78,
  #DE8C78,
@@ -64,7 +64,7 @@ body {
 
 .heading-primary--main {
   display: block;
-  font-size: 18rem;
+  font-size: 10rem;
   font-weight: 400;
   letter-spacing: 3.5rem; }
 

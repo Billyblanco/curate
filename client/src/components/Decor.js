@@ -17,14 +17,19 @@ class Decor extends Component {
   render () {
     const { search } = this.state
     const filteredDecor = this.props.decorData.filter( decor => {
-      return decor.type.toLowerCase().indexOf(search.toLowerCase()) != -1
+      return decor.type.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
-    return (
-       <div className='searchbar'>
-         <button className='close-button'onClick={this.props.closeModal}>Close</button>
-           <input type='text' placeholder='ex. candle holder'
-            value={this.state.search}
-            onChange={this.updateSearch}/>
+    return ( 
+  <div className='searchbar'>
+     <button className='close-button'onClick={this.props.closeModal}>Close</button>
+        <input type='text' placeholder='ex. candle holder'
+               value={this.state.search}
+               onChange={this.updateSearch}/>
+                  <div className='finish-buttons'>
+                    <button onClick={this.props.showVaseModal}>Go Back to Vases</button>
+                      <button>Add Decor to Cart!</button>
+              </div>
+                    
   { 
     filteredDecor.map(decor => {
     return (
@@ -39,12 +44,7 @@ class Decor extends Component {
       )
     })
   }
-  <div className='finish-buttons'>
-    <button onClick={this.props.showVaseModal}>Go Back to Vases</button>
-    <button>Add Decor to Cart!</button>
-  </div>
-      </div>
-     
+</div>
     )
   }
 }

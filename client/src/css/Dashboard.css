@@ -1,8 +1,6 @@
 * {
   margin: 0;
-  
   box-sizing: border-box;
- 
 }
 
 body {
@@ -14,15 +12,14 @@ body {
   background-color: #E0E0E0;
 }
 
-
 .flower-inner-modal {
   height: 800px;
-  width: 800px;
   display: flex;
   flex-direction: column;
   overflow: auto;
   border: none;
 }
+
 .mid {
   padding: 100px;
   text-align: center;

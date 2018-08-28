@@ -3,13 +3,16 @@
   border-radius: 14px;
   font-size: 28px;
   font-weight: 900;
-  height: 570px;
+  height: 580px;
   margin:3px;
   background-color: white;
+  position: relative;
 }
+
 .modal-card button {
   padding: 25px;
-  margin: 30px;
+  margin-top: 80px;
+  margin-right: 50px;
   border-radius: 15px;
   float: right;
   background-color: #36454f;
@@ -26,9 +29,17 @@
   left: 30rem;
 }
 
-.searchbar {
-  position: absolute;
-  top: 0;
-  right: 8rem;
-  box-shadow: 2px 2px #36454fbd;
+.sticky-header {
+  background-color: rgba(250, 128, 114, 0.646);
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  z-index: 2;
+  width: 93.5%;
+  height: 70px;
+  display: flex;
 }
+
+.vase-searchbar input {
+  box-shadow: 2px 2px #36454fbd;
+} 

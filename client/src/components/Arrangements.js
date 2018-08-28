@@ -5,13 +5,17 @@ import { deleteArrangement } from '../redux/reducers/arrangementsReducer'
 
 class Arrangements extends Component {
 
+  componentDidMount () {
+    
+  }
+
    render () {
      const {arrangement} = this.props
      let totalPrice = +arrangement.vase.price
      console.log(arrangement.vase.price)
      return (
           <div className='arrangements-container'>
-            <div> 
+            <div className='arrangement'> 
               <p>{arrangement.vase.name}</p>
             <img src={arrangement.vase.imageUrl} alt='vase' height='100'/>
               
@@ -35,7 +39,7 @@ class Arrangements extends Component {
                 <div>
                 <button className='delete-button'
                 onClick={ () => {this.props.deleteArrangement(arrangement.id)}}>Remove</button></div>
-               <p>{totalPrice}</p>
+               <p>TOTAL PRICE:{totalPrice}</p>
           </div>
      )
    }

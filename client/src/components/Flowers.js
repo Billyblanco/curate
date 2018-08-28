@@ -31,19 +31,21 @@ updateFlowersSearch = (e) => {
       return flower.name.toLowerCase().indexOf(searchFlowers.toLowerCase()) !== -1
     })
   return (
-    <div>
-      <div>
+    <div style={customStyles}>
+      <div className='sticky-header-flowers'>
         <button className='close-button' onClick={this.props.closeModal}>close</button>
-      </div>
-          <div className='searchbar'>
-            <input type='text' placeholder='Search Flowers'
-                   value={this.state.searchFLowers}
-                   onChange={this.updateFlowersSearch}
-                   width='500'/>
+          <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
+           <div className='flower-searchbar'>
+              <input type='text' placeholder='Search Flowers'
+                     value={this.state.searchFLowers}
+                     onChange={this.updateFlowersSearch}
+                     width='500'/>
           </div>
+        </div>
+
       { filteredFlowers.map(flower => {
         return (
-          <div className="flower-modal-card">
+          <div key='flower-stuff' className="flower-modal-card">
             <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
             
             <p>{flower.name}</p>
@@ -55,11 +57,6 @@ updateFlowersSearch = (e) => {
           </div>
         )
       })}
-          
-     
-      <div>
-        <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
-      </div>
     </div>
    )
   }
@@ -74,3 +71,14 @@ let mapStateToProps = state => {
 
 export default connect(mapStateToProps, {  addFlowersToArrangement, getFlowers})(Flowers)
 
+const customStyles = {
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    top: '30%',
+    bottom: '40%',
+    border: '0',
+    borderRadius: '4px',
+    padding: '10px',
+  }
+}

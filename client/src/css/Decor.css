@@ -5,6 +5,7 @@
   font-size: 28px;
   font-weight: 900;
   margin: 5px;
+  /* width: 150rem; */
 }
 
 .decor-modal-card button {
@@ -28,10 +29,10 @@
 }
 
 .searchbar input {
-  position: absolute;
+  /* position: absolute;
   top: 3.7rem;
   right: 59rem;
-  box-shadow: 2px 2px #36454fbd;
+  box-shadow: 2px 2px #36454fbd; */
 }
 
 .finish-buttons {

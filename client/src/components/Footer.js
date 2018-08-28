@@ -11,10 +11,10 @@ class Footer extends Component {
       <div className='footer'>
       <p> This Is A Cute Footer Message </p>
             <div className='footer-logo-box'>
-              <img src={ig} height={60}/>
-              <img src={fb} height={60}/>
-              <img src={pin} height={60}/>
-              <img src={twitter} height={60}/>
+              <img src={ig} alt='ig-logo' height={60}/>
+              <img src={fb} alt='fb-logo' height={60}/>
+              <img src={pin} alt='pinterest-logo' height={60}/>
+              <img src={twitter} alt='twitter-logo' height={60}/>
             </div>
       </div>
     )

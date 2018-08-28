@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../css/Vases.css'
 
+
 class Vases extends Component {
 
-state = {
-  search: ''
-}
+  state = {
+    search: ''
+  }
 
 createArrangement = (vaseId, flowerIds) => {
   axios.post('/api/arrangements', {vaseId, flowerIds}).then(response => {
@@ -26,20 +27,25 @@ updateSearch = (e) => {
 }
 render () {
   let { vaseId, flowerIds } = this.props
-  // console.log(vaseId, flowerIds)
   const { search } = this.state
   const filteredVases = this.props.vasesData.filter( vase => {
     return vase.type.toLowerCase().indexOf(search.toLowerCase()) !== -1
   })
   return (
-    <div style={customStyles.content}>
-      <div>
+   
+<div style={customStyles}>   
+      <div className='sticky-header'>
         <button className='close-button'onClick={this.props.closeModal}>close</button>
-      </div>
           <div className='searchbar'>
               <input type='text' placeholder='Search Vases' value={this.state.search}
               onChange={this.updateSearch}/>
           </div>
+              <div className='finish-buttons'>
+                  <button onClick={this.props.showFlowerModal}>Go Back to Flowers</button>
+                     <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement</button></Link>
+                </div>
+          </div>
+
     { filteredVases.map(vases => {
       return (
       <div className='modal-card'>
@@ -47,23 +53,15 @@ render () {
         <p>{vases.name}</p>
         <p>${vases.price}</p>
         <img 
-        src={ vases.image_url } alt='vases' height='450' width='450'/>
+        src={ vases.image_url } alt='vases' height='400' width='450'/>
       </div>
         )
     })
   }
-  <div className='finish-buttons'>
-    <button
-    onClick={this.props.showFlowerModal}
-    >Go Back to Flowers</button>
-        <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement</button></Link>
-    
-  </div>
-    </div>
+</div>
     ) 
   }
 }
-
 
 let mapStateToProps = state => {
   return {
@@ -74,9 +72,6 @@ let mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {addVase, getArrangementsFlowers, getVases, createArrangement})(Vases)
-
-
-
 
 const customStyles = {
   content: {
@@ -90,3 +85,10 @@ const customStyles = {
   }
 }
 
+// const config = {
+//   bucketName: 'curate-personal-project',
+//   dirName: 'user-input',
+//   region: 'eu-west-1',
+//   accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
+//   secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
+// }

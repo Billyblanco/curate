@@ -1,26 +1,15 @@
-ul {
-  list-style: none;
-}
-.navbar {
-  display: flex;
-  flex-direction: row;
-  align-content: space-around;
-  height: 20px;
-  background-color: #DE8C78;
-  color: white;
+.navbar ul {
+  text-decoration: none;
+  background-image: white;
+  display: inline-block;
 }
 
-.navbar-left-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.navbar i {
+  color:darkslategray;
+  height: 10px;
+  width: 10px;
 }
 
-.navbar-right-container {
-  display: flex;
-  flex-direction: row;
-  align-items: right;
-}
 
 
 

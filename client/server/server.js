@@ -10,9 +10,9 @@ const express = require('express')
     , arrangementsController= require('./controllers/arrangementsController')
     , userController = require('./controllers/userController')
     , ordersController = require('./controllers/ordersController')
-   
+    
 
-
+  
 const app = express()
 
 app.use(bodyParser.json())
@@ -27,6 +27,7 @@ massive(process.env.CONNECTION_STRING).then( db => {
   app.set('db', db)
   console.log('DATABASE CONNECTED!')
 })
+
 
 //Auth0
 app.get('/auth/callback', authController.auth)
@@ -54,6 +55,7 @@ app.put('/api/currentUser/username', userController.updateUsername)
 app.put('/api/currentUser/password', userController.updatePassword)
 // Orders 
 app.post('/api/checkout', ordersController.checkout)
+
 app.delete('/api/arrangements/:id')
 
 

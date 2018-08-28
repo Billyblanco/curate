@@ -1,6 +1,3 @@
-import axios from 'axios'
-
-const FULFILLED = '_FULFILLED'
 const ADD_DECOR = 'ADD_DECOR'
 
 let initialState = {
