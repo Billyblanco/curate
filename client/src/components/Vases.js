@@ -3,15 +3,29 @@ import { connect } from 'react-redux'
 import { addVase, getArrangementsFlowers, createArrangement } from '../redux/reducers/arrangementsReducer'
 import { getVases } from '../redux/reducers/productReducer'
 import { Link } from 'react-router-dom'
+import ReactS3Uploader from 'react-s3-uploader'
+
 import axios from 'axios'
 import '../css/Vases.css'
 
 
-class Vases extends Component {
+const config = {
+  bucketName: process.env.REACT_APP_SOME_BUCKET,
+  dirName: 'user-input',
+  region: 'eu-west-1',
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY,
+}
 
-  state = {
-    search: ''
+class Vases extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      search: ''
+    }
   }
+ 
 
 createArrangement = (vaseId, flowerIds) => {
   axios.post('/api/arrangements', {vaseId, flowerIds}).then(response => {
@@ -25,6 +39,8 @@ updateSearch = (e) => {
     search: e.target.value.substr(0,20)
   })
 }
+
+
 render () {
   let { vaseId, flowerIds } = this.props
   const { search } = this.state
@@ -40,15 +56,18 @@ render () {
               <input type='text' placeholder='Search Vases' value={this.state.search}
               onChange={this.updateSearch}/>
           </div>
+   
               <div className='finish-buttons'>
                   <button onClick={this.props.showFlowerModal}>Go Back to Flowers</button>
                      <Link to='/cart'><button onClick={ () => {this.createArrangement(vaseId, flowerIds)} }>Complete Arrangement</button></Link>
                 </div>
+                
           </div>
 
     { filteredVases.map(vases => {
       return (
       <div className='modal-card'>
+    
         <button onClick={() => {this.props.addVase(vases.id)}}>Select Vase</button>
         <p>{vases.name}</p>
         <p>${vases.price}</p>
@@ -58,6 +77,30 @@ render () {
         )
     })
   }
+  <ReactS3Uploader
+    signingUrl="/s3/sign"
+    signingUrlMethod="GET"
+    accept="image/*"
+    s3path="/uploads/"
+    preprocess={this.onUploadStart}
+    onSignedUrl={this.onSignedUrl}
+    onProgress={this.onUploadProgress}
+    onError={this.onUploadError}
+    onFinish={this.onUploadFinish}
+    // signingUrlHeaders={{ additional: headers }}
+    // signingUrlQueryParams={{ additional: query-params }}
+    signingUrlWithCredentials={ true }      // in case when need to pass authentication credentials via CORS
+    uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }}  // this is the default
+    contentDisposition="auto"
+    scrubFilename={(filename) => filename.replace(/[^\w\d_\-.]+/ig, '')}
+    inputRef={cmp => this.uploadInput = cmp}
+    autoUpload={true}
+    />
+
+    <div>
+    <input type='file' 
+    onChange={this.uploadFile}/>
+    </div>
 </div>
     ) 
   }
@@ -85,10 +128,4 @@ const customStyles = {
   }
 }
 
-// const config = {
-//   bucketName: 'curate-personal-project',
-//   dirName: 'user-input',
-//   region: 'eu-west-1',
-//   accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
-//   secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
-// }
+

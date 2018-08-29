@@ -6,13 +6,19 @@ import { deleteArrangement } from '../redux/reducers/arrangementsReducer'
 class Arrangements extends Component {
 
   componentDidMount () {
-    
-  }
+    const { arrangement } = this.props
+      let totalPrice = +arrangement.vase.price
+   
+    arrangement.flowers.forEach( flower => {
+        totalPrice += +flower.price
+      })
 
+    this.props.addTotal(totalPrice)
+  }
+  
    render () {
      const {arrangement} = this.props
      let totalPrice = +arrangement.vase.price
-     console.log(arrangement.vase.price)
      return (
           <div className='arrangements-container'>
             <div className='arrangement'> 

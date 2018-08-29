@@ -63,7 +63,7 @@ render() {
 <div>
   <Header />
   <div className='mid'>
-  <h1>  CHOOSE YOUR ELEMENTS </h1>
+  <h1> choose your elements </h1>
   </div>
 <div className='main-body'>
    

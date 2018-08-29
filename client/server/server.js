@@ -28,6 +28,14 @@ massive(process.env.CONNECTION_STRING).then( db => {
   console.log('DATABASE CONNECTED!')
 })
 
+app.use('/s3', require('react-s3-uploader/s3router')({
+  bucket: process.env.REACT_APP_SOME_BUCKET,
+  region: 'us-west-1', //optional
+  // signatureVersion: 'v4', //optional (use for some amazon regions: frankfurt and others)
+  // headers: {'Access-Control-Allow-Origin': '*'}, // optional
+  ACL: 'private', // this is default
+  uniquePrefix: true // (4.0.2 and above) default is true, setting the attribute to false preserves the original filename in S3
+}));
 
 //Auth0
 app.get('/auth/callback', authController.auth)

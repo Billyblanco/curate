@@ -7,42 +7,53 @@ import Checkout from './Checkout'
 import Nav from './Nav'
 
 class Cart extends Component {
+ constructor () {
+   super()
 
-  state = {
-    superTotalPrice: ''
-  }
+    this.state = {
+      superTotalPrice: 0
+    }
 
+ }
   componentDidMount() {
     this.props.getArrangementsFlowers()}
   
   componentWillReceiveProps(props) {}
 
-  
+  addTotal = (totalPrice) => {
+    this.setState({
+      superTotalPrice: this.state.superTotalPrice += totalPrice
+    })
+  }
 
   render() {
-   
     return (
       <div>
         <Nav />
         <div className='cart-header'>
           <h1>YOUR SHOPPING CART</h1>
-          <button onClick={ () => {this.checkout()}}>Checkout</button>
+              <Checkout
+              name = { 'Curate' }
+              description = {'Arrangment Payment'}
+              amount = {this.state.superTotalPrice}/>
             <Link to='/dashboard'><p>Make another Arrangement</p></Link>
         </div>
+        
              <div className='cart-items'>
                 <h4>Vase</h4>
                 <h4>Flowers</h4>
             </div>
         {
           this.props.arrangementsData.map( arrangement => {
-            console.log(1111111, arrangement)
-            return <Arrangement arrangement={arrangement}/>
+            return <Arrangement arrangement={arrangement}
+                                addTotal={this.addTotal}  />
           })
         }
-        <Checkout
-          name = { 'Curate' }
-          description = {'Arrangment Payment'}
-          amount = {this.props.totalPrice}/>
+        
+        
+         <div>
+          <input placeholder={this.state.superTotalPrice} />
+        </div>
       </div>
     )
   }

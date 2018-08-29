@@ -13,9 +13,9 @@ class Header extends Component {
 
         <div className='header__text-box'>
           <h1 className='heading-primary'> 
-            <span className='heading-primary--main'>Curate
+            <span className='heading-primary--main'>Curate.
                   </span>
-            <span className='heading-primary--sub'> Something </span>
+            <span className='heading-primary--sub'> Something should go here </span>
           </h1>
           <br></br>
             {/* <a href='#'

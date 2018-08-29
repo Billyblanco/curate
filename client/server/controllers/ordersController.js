@@ -6,7 +6,7 @@ module.exports = {
      try {
     let db = req.app.get('db')
     console.log('body', req.body)
-    // stripe.charges.create(req.body)
+    stripe.charges.create(req.body)
     let { id } = req.session.user
     let arrangementsData = await db.getArrangements([id])
       
