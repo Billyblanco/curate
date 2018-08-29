@@ -31,7 +31,7 @@ updateFlowersSearch = (e) => {
       return flower.name.toLowerCase().indexOf(searchFlowers.toLowerCase()) !== -1
     })
   return (
-    <div style={customStyles}>
+    <div>
       <div className='sticky-header-flowers'>
         <button className='close-button' onClick={this.props.closeModal}>close</button>
           <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
@@ -82,3 +82,30 @@ const customStyles = {
     padding: '10px',
   }
 }
+// const customStyles = {
+//   content : {
+//     top                   : '50%',
+//     left                  : '50%',
+//     right                 : 'auto',
+//     bottom                : 'auto',
+//     marginRight           : '-50%',
+//     transform             : 'translate(-50%, -50%)'
+//   }
+// };
+
+const style = {
+  content: {
+    border: '0',
+    borderRadius: '4px',
+    bottom: 'auto',
+    height: '600px',  // set height
+    left: '50%',
+    padding: '2rem',
+    position: 'fixed',
+    right: 'auto',
+    top: '50%', // start from center
+    transform: 'translate(-50%,-' + -30% + ')', // adjust top "up" based on height
+    width: '40%',
+    maxWidth: '40rem'
+  }
+};

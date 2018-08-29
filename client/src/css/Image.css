@@ -1,0 +1,15 @@
+.image-scroll {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  overflow-x: auto;
+}
+
+.image-container h1, h2{
+  text-align: center;
+  
+}
+.image-container {
+  padding: 90px;
+  margin: 20px;
+}

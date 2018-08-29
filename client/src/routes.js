@@ -4,6 +4,7 @@ import Cart from './components/Cart'
 import Dashboard from './components/Dashboard'
 import Landing from './components/Landing'
 import Settings from './components/Settings'
+import Header2 from './components/Header2'
 
 export default (
   <Switch> 
@@ -11,6 +12,6 @@ export default (
       <Route path='/cart' component={Cart}/> 
       <Route path='/dashboard' component={Dashboard}/> 
       <Route path='/settings' component={Settings}/>
-     
+      {/* <Route path='/test' component={Header2}/> */}
   </Switch> 
 )

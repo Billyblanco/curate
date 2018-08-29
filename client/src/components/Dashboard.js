@@ -8,7 +8,8 @@ import Flowers from './Flowers'
 import Vases from './Vases'
 import Decor from './Decor'
 import '../css/Dashboard.css'
-import Header from './Header'
+import Header2 from './Header'
+import Image from './Image'
 import Footer from './Footer'
 Modal.setAppElement('#root')
 
@@ -61,7 +62,7 @@ render() {
   return (
   
 <div>
-  <Header />
+  <Header2 />
   <div className='mid'>
   <h1> choose your elements </h1>
   </div>
@@ -80,8 +81,9 @@ render() {
             </div>
         </div>
 
-  <Modal className='flower-inner-modal'
+  <Modal className='inner-modal'
     isOpen={this.state.flowerModal}
+    style={style}
     onRequestClose={this.closeFlowerModal}>
     <Flowers closeModal={this.closeFlowerModal} 
     showVaseModal={this.toggleVaseModal}/>
@@ -97,11 +99,13 @@ render() {
       </div>
   </div>
 
-    <Modal  isOpen={this.state.vaseModal}
+    <Modal  className='inner-modal'
+            isOpen={this.state.vaseModal}
+            style={style}
             onRequestClose={this.closeVaseModal}>
         <Vases closeModal={this.closeVaseModal}
               showFlowerModal={this.toggleFlowerModal}/>
-   </Modal>
+   </Modal >
    <div className='card-container'>
       <div className='card'>
         <div className='front front-three'><h2>DECOR</h2></div>
@@ -112,12 +116,17 @@ render() {
             </div>
         </div>
     </div>
-  <Modal    isOpen={this.state.decorModal}
+  <Modal    className='inner-modal'
+            isOpen={this.state.decorModal}
+            style={style}
             onRequestClose={this.closeDecorModal}>
       < Decor closeModal={this.closeDecorModal}
               showVaseModal={this.toggleVaseModal}/>
   </Modal>
 </div> 
+  <div>
+    <Image />
+  </div>
         <div>
           <Footer />
         </div>
@@ -139,5 +148,25 @@ let mapStateToProps = state => {
 export default connect( mapStateToProps, { getFlowers, getVases, getDecor, createArrangement })(Dashboard)
 
 
+// const padding = 90; // adjust this to your needs
+// let height = (this.state.contentHeight + padding);
+// let heightPx = height + 'px';
+// let heightOffset = height / 2;
+// let offsetPx = heightOffset + 'px';
 
-
+const style = {
+  content: {
+    border: '0',
+    borderRadius: '4px',
+    bottom: 'auto',
+    // height: '900px',  // set height
+    left: '20%',
+    padding: '2rem',
+    position: 'fixed',
+    right: '20%',
+    top: '0', // start from center
+    transform: 'translate(-50%,-' + 50% + ')', // adjust top "up" based on height
+    width: '80%',
+    maxWidth: '90rem'
+  }
+};

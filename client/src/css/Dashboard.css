@@ -9,10 +9,11 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #36454f;
-  background-color: #E0E0E0;
+  background-color: white
+  ;
 }
 
-.flower-inner-modal {
+.inner-modal {
   height: 800px;
   display: flex;
   flex-direction: column;
@@ -138,6 +139,22 @@ body {
  line-height: 2.5rem;
  font-size: 10px;
 }
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   
-} */
+  .main-body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .card-container {
+    margin-top: 40px;
+    width: 80%
+  }
+  .mid {
+    font-size: 14px;
+    padding:10px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+}

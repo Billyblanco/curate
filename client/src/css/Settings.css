@@ -30,3 +30,8 @@ button {
 
 }
 
+@media (max-width: 600px) {
+  .settings-input {
+  
+  }
+}
