@@ -1,3 +1,5 @@
+//BrowserRouter
+const path = require('path')
 require('dotenv').config()
 const express = require('express')
     , session = require('express-session')
@@ -16,7 +18,10 @@ const express = require('express')
 const app = express()
 
 app.use(bodyParser.json())
-  
+ 
+
+app.use( express.static( `${__dirname}/../build` ) )
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   saveUninitialized: true,
@@ -35,7 +40,7 @@ app.use('/s3', require('react-s3-uploader/s3router')({
   // headers: {'Access-Control-Allow-Origin': '*'}, // optional
   ACL: 'private', // this is default
   uniquePrefix: true // (4.0.2 and above) default is true, setting the attribute to false preserves the original filename in S3
-}));
+}))
 
 //Auth0
 app.get('/auth/callback', authController.auth)
@@ -66,6 +71,10 @@ app.post('/api/checkout', ordersController.checkout)
 
 app.delete('/api/arrangements/:id')
 
+//BrowserRouter
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const PORT = 4007
 app.listen(PORT, () => {
