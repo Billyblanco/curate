@@ -63,14 +63,14 @@ render() {
   return (
 <div>
   <Nav />
-  <Header/>
-    {/* <div className='mid'>
-      <p>Curate allows you to be your own designer. <br></br>Begin with choosing your favourite flowers, then Add Them to One of Our Beautiful Vase Selections.</p>
-     
-    </div> */}
-    <div className='element-header'> <h1> choose your elements </h1> </div>
+    <div><Header/></div>
+      <div className='image-one'>
+          <p>be your own designer.</p>
+      </div>
+          <div className='mid'>
+              <h2> choose your elements </h2>
+          </div>
     
-
 <div className='main-body'>
   <div className='card-container'>
     <div className='card'>
@@ -138,7 +138,9 @@ render() {
 
 </div> 
     <div><Image/></div>
+    <div className='image-one-footer'></div>
     <div><Footer/></div>
+   
 </div>
 
     )

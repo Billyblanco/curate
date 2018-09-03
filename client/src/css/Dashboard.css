@@ -9,10 +9,29 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #36454f;
-  background-color: white
-  ;
+  background-color: white;
 }
 
+.image-one {
+  height: 80vh;
+  width: 100%;
+  background-size: contain;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table;
+  background-attachment: fixed;
+}
+
+.image-one p {
+  font-size: 40px;
+  letter-spacing: .6rem;
+  position: relative;
+  top: 350px;
+  font-weight: 900;
+  color: white;
+  line-height: 2rem;
+}
 .inner-modal {
   height: 800px;
   display: flex;
@@ -30,16 +49,25 @@ body {
   
   
 }
-.mid p {
-  font-size: 19px;
-  font-weight: 100;
-  line-height: 4rem;
+/* .mid h1 {
+  font-size: 110px;
+  letter-spacing: .2rem;
+  font-weight: 900;
+  line-height: 7rem;
   text-transform: initial;
+  color: white;
+  text-shadow: 0px 4px 3px rgba(148, 144, 144, 0.591);
+  margin-top: 140px;
+  text-transform: lowercase;
+} */
+.mid h2 {
+  color: #343232;
+  font-weight: 900;
+  letter-spacing: .3rem;
+  font-size: 40px;
+  text-transform: uppercase;
 }
-.mid hr {
-  margin-top: 80px;
- 
-}
+
 .element-header {
   text-align: center;
   text-transform: uppercase;
@@ -47,10 +75,10 @@ body {
   line-height: 2rem;
   font-size: 26px;
   padding: 20px;
-  margin: 50px;
 }
 
 .main-body {
+  
   padding-top: 30px;
   display: flex;
   flex-direction: row;
@@ -99,10 +127,9 @@ body {
   transform: rotateY(180deg);
   text-align: center;
   padding-top: 80px;
-  background-image: linear-gradient(to top, 
- pink,
- rgb(250, 128, 114),
- salmon
+  background-image: linear-gradient(to top right, 
+  #DB737C,
+  #EBAE79
  );
  border-radius: 3px;
   box-shadow: 10px 10px rgba(114, 3, 3, 0.064);
@@ -132,9 +159,10 @@ body {
   position: absolute;
   top: 6rem;
   left:2.7rem;
-  background-image: linear-gradient(to right bottom, 
-  rgba(255, 192, 203, 0.632),
-  rgba(255, 127, 80, 0.365));
+  background-image: linear-gradient(to top left, 
+ 
+  rgba(219, 115, 124, 0.625),
+  rgba(235, 174, 121, 0.664));
   border-radius: 5px;
   color: #36454f;
   padding:2px;
@@ -161,6 +189,22 @@ body {
  line-height: 2.5rem;
  font-size: 10px;
 }
+
+.image-one-footer {
+  height: 38vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table;
+  background-attachment: fixed;
+}
+
+
+
+
+
 @media (max-width: 667px) {
   
   .main-body {

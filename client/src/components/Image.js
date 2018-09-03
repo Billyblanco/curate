@@ -20,7 +20,7 @@ componentDidMount() {
 render () {
   return (
     <div className='image-container'>
-      <h1>not sure what you want?</h1>
+      <h1>need some inspiration?</h1>
         <h2>check out what other curators have selected</h2>
             <div className='image-scroll'>
         {
