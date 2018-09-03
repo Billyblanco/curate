@@ -1,3 +1,6 @@
+.entire-vase-modal {
+  z-index: 3000;
+}
 .modal-card {
   border: 11px solid rgba(128, 128, 128, 0.733);
   border-radius: 14px;

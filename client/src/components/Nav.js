@@ -22,7 +22,8 @@ toggleMenu = () => {
 
 handleMouseUp = (e) => {
   this.toggleMenu()
-    console.log("clicked")
+    console.log("clicked");
+    e.stopPropagation();
     if (this.state.visible && this.state.menuClosed === 'menuClosed') {
       this.setState({
         menuClosed: 'menuOpened'

@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  height: 20vh;
+  height: 10vh;
   margin-top: 0;
   background-image: linear-gradient(to bottom right, 
  #DE8C78,
@@ -22,7 +22,7 @@ body {
  rgba(223, 191, 184, 0.7),
  rgba(248, 202, 206, 0.78)), url('../img/background.jpg');
   background-repeat: no-repeat;
-  z-index: -3;
+  /* z-index: -3; */
   background-size: cover;
   background-position: center;
 }
@@ -54,10 +54,10 @@ body {
   letter-spacing: 1rem;
   animation: ease-out; 
   position: relative;
-  color: darkslategray;
+  color: #343232;
   top: 120px;
   left: -200px;
-  z-index: 2;
+  /* z-index: 2; */
   text-shadow: 0px 4px 3px rgba(140, 139, 139, 0.797);
 }
 

@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 10px solid gray;
+  border: 10px solid #343232e4;
   background-color: #EDEDED;
   margin: 20px;
   justify-content: flex-start;
@@ -16,36 +16,31 @@
   position: relative;
 }
 
-.cart-header button {
-  padding: 20px;
-  background-color: #36454f;
-  color: white;
+.cart-header  {
   font-size: 22px;
   line-height: 2.2rem;
-  border-radius: 15px;
-  float: right;
-  top: 0;
-  left: 75rem;
-  margin: 3px;
+  margin-top: 170px;
+  margin-left: 20px;
 }
-.cart-header p {
-  float: right;
-  text-decoration: none;
-  color: #36454f;
-  font-size: 20px;
-  line-height: 2.2rem;
-  padding: 22px;
-}
+
 .cart-items {
-  width: 1000px;
+  width: 96.5%;
   height:40px;
-  background-color: darkgray;
+  background-color: rgb(148, 148, 148);
   color: white;
-  margin: 20px;
+  margin:40px 20px;
+  text-decoration: none;
 }
 .cart-items h4 {
   display: inline-block;
   margin: 5px 80px 0px 70px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.cart-items p {
+  display: inline-block;
+  float: right;
+  margin-right: 8px;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -75,7 +70,6 @@
 .arrangements-container p {
   width: min-content;
   margin: 8px;
-  
 }
 
 .arrangement {
@@ -83,4 +77,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
+}
+
+.stripe {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
+.total-price {
+  font-weight: 900;
+  position: relative;
+  margin-top: 100px;
+  margin-left: 100px;
 }

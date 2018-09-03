@@ -7,11 +7,11 @@
   justify-content: space-between;
   margin-right: 15px;
   margin-left: 15px;
-  color:darkslategray;
+  color:#343232;
 }
 
 .navbar i {
- color:darkslategray;
+ color: #343232;
  margin-top: 20px;
  margin-right: 40px;
  cursor: pointer;
@@ -21,7 +21,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  
  
 }
 
@@ -31,6 +31,7 @@
   margin-top: 0;
   cursor: pointer;
   text-shadow: 0px 4px 3px rgba(245, 243, 243, 0.139);
+  
 }
 
 .menu-toggle {
@@ -42,12 +43,11 @@
 .bar3 {
   width: 40px;
   height: 5px;
-  background-color: darkslategray;
+  background-color: #343232;
   margin: 10px 20px;
   padding: 0;
   transition: .4s;
 }
-
 
 .menu-item { 
   display: flex;
@@ -65,19 +65,20 @@
   height: 20vh;
   width:24.7vw;
   margin: auto;
+  transform: translate3d(0vw, 0, 0);
   background-color: rgba(233, 150, 122, 0.947);  
   position: absolute;
   opacity: 0.95;
   top:66px;
   right:0;
   z-index: 2;
-  transition: transform .3s ease-in;
- 
+  transition: transform .3s cubic-bezier(0, .52, 0, 1); 
 }
 
 .menuOpened {
   height: 100vh;
   width:30vw;
+  transform: translate3d(-100vw, 0, 0);
   background-color:wheat;
   position: absolute;
   top:66px;
@@ -85,5 +86,4 @@
   right:-30vw;
   z-index: 2;
   margin: auto;
-  transition: transform .3s ease-in;
-}
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);}

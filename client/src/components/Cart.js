@@ -5,7 +5,7 @@ import Arrangement from './Arrangements'
 import { Link } from 'react-router-dom'
 import Checkout from './Checkout'
 import Nav from './Nav'
-
+import Footer from './Footer'
 class Cart extends Component {
  constructor () {
    super()
@@ -13,48 +13,52 @@ class Cart extends Component {
     this.state = {
       superTotalPrice: 0
     }
-
  }
-  componentDidMount() {
-    this.props.getArrangementsFlowers()}
+
+
+componentDidMount() {
+  this.props.getArrangementsFlowers()}
   
-  componentWillReceiveProps(props) {}
+componentWillReceiveProps(props) {}
 
-  addTotal = (totalPrice) => {
-    this.setState({
-      superTotalPrice: this.state.superTotalPrice += totalPrice
-    })
-  }
+addTotal = (totalPrice) => {
+  this.setState({
+    superTotalPrice: this.state.superTotalPrice += totalPrice
+  })
+}
 
-  render() {
-    return (
-      <div>
-        <Nav />
+render() {
+  return (
+    <div>
+      <Nav />
         <div className='cart-header'>
           <h1>YOUR SHOPPING CART</h1>
-              <Checkout
-              name = { 'Curate' }
-              description = {'Arrangment Payment'}
-              amount = {this.state.superTotalPrice}/>
-            <Link to='/dashboard'><p>Make another Arrangement</p></Link>
         </div>
         
-             <div className='cart-items'>
-                <h4>Vase</h4>
-                <h4>Flowers</h4>
-            </div>
-        {
-          this.props.arrangementsData.map( arrangement => {
-            return <Arrangement arrangement={arrangement}
-                                addTotal={this.addTotal}  />
-          })
-        }
-        
-        
-         <div>
-          <input placeholder={this.state.superTotalPrice} />
+    <div className='cart-items'>
+      <h4>Vase</h4>
+        <h4>Flowers</h4>
+          <Link to='/dashboard'><p>Make another Arrangement</p></Link>
+    </div>
+
+    {
+      this.props.arrangementsData.map( arrangement => {
+        return <Arrangement arrangement={arrangement}
+                            addTotal={this.addTotal} />
+      })
+    }
+
+        <div className='stripe'>
+          <Checkout name = { 'Curate' }
+                    description = {'Arrangment Payment'}
+                    amount = {this.state.superTotalPrice}/>
         </div>
-      </div>
+        <br></br>
+          <div>
+            <Footer />
+          </div>
+    </div>
+    
     )
   }
 }

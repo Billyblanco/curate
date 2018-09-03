@@ -13,6 +13,7 @@ const express = require('express')
     , userController = require('./controllers/userController')
     , ordersController = require('./controllers/ordersController')
     , AWSController = require('./controllers/AWSController')
+    , ordersArrangementsController = require('./controllers/ordersArrangmentsController')
     , nodemailerController = require('./controllers/nodemailerController')
     // , nodemailer = require('nodemailer')
   
@@ -70,12 +71,14 @@ app.put('/api/currentUser/password', userController.updatePassword)
 // Orders 
 app.post('/api/checkout', ordersController.checkout)
 app.delete('/api/arrangements/:id')
+app.get('/api/orders', ordersArrangementsController.get)
 
 // AWS
 app.post('/api/aws', AWSController.sign)
 
+
 //Nodemailer
-app.post('/send', nodemailerController.send)
+// app.post('/send', nodemailerController.send)
 
 //BrowserRouter
 // app.get('*', (req, res)=>{

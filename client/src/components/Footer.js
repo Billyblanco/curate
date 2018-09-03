@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import '../css/Footer.css'
-import ig from '../img/instagram-icon.png'
-import fb from '../img/facebook-icon.png'
-import pin from '../img/pinterest-icon.png'
-import twitter from '../img/twitter-icon.png'
+import logo from '../img/modern-logo.png'
+
 class Footer extends Component {
 
   render () {
     return (
       <div className='footer'>
-      <p> This Is A Cute Footer Message </p>
-            <div className='footer-logo-box'>
-              <img src={ig} alt='ig-logo' height={60}/>
-              <img src={fb} alt='fb-logo' height={60}/>
-              <img src={pin} alt='pinterest-logo' height={60}/>
-              <img src={twitter} alt='twitter-logo' height={60}/>
-            </div>
+       
+        <p> Copywrite Curate 2018</p>
+          <img src={logo} alt='logo' height='180' width='180'/>
+          <div className='social'>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-twitter"></i>
+          </div>
            
       </div>
     )

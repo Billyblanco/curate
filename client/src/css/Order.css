@@ -1,0 +1,13 @@
+.order-card {
+  border: 5px solid darkgray;
+  background: linear-gradient(to right, darkgray, gray);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-evenly;
+  margin: 50px;
+  box-shadow: rgba(75, 74, 74, 0.42);
+  flex-grow: 3;
+}
+
+

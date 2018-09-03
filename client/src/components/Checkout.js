@@ -23,6 +23,7 @@ const onToken = (amount, description) => token =>{
 
   function Checkout({ name, description, amount }){
     return (
+      
       <StripeCheckout
             name={name}
             description={description}

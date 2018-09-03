@@ -21,13 +21,34 @@ body {
   border: none;
 }
 
-.mid {
+ .mid {
   padding: 100px;
   text-align: center;
   line-height: 2;
   font-size: 28px;
+  color: #343232;
+  
+  
 }
-
+.mid p {
+  font-size: 19px;
+  font-weight: 100;
+  line-height: 4rem;
+  text-transform: initial;
+}
+.mid hr {
+  margin-top: 80px;
+ 
+}
+.element-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 2rem;
+  font-size: 26px;
+  padding: 20px;
+  margin: 50px;
+}
 
 .main-body {
   padding-top: 30px;

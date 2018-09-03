@@ -40,7 +40,7 @@ render () {
   })
   return (
    
-<div style={customStyles}>   
+<div style={customStyles} className='entire-vase-modal'>   
       <div className='sticky-header'>
         <button className='close-button'onClick={this.props.closeModal}>close</button>
           <div className='searchbar'>
