@@ -3,6 +3,8 @@ import '../css/Header.css'
 import Nav from './Nav'
 
 class Header extends Component {
+
+
   render () {
     return (
       <div className='header'>
@@ -12,14 +14,11 @@ class Header extends Component {
         </div>
 
         <div className='header__text-box'>
-          <h1 className='heading-primary'> 
-            <span className='heading-primary--main'>Curate.
-                  </span>
-            <span className='heading-primary--sub'> Something should go here </span>
-          </h1>
-          <br></br>
-            {/* <a href='#'
-              className='button button--white button--animated'>Start Designing</a> */}
+            {/* <span className='heading-primary--main'>Curate.
+                  </span> */}
+            {/* <span className='heading-primary--sub'> Something should go here. </span> */}
+          
+          
         </div>
    </div>
      

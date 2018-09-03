@@ -16,6 +16,7 @@ class Footer extends Component {
               <img src={pin} alt='pinterest-logo' height={60}/>
               <img src={twitter} alt='twitter-logo' height={60}/>
             </div>
+           
       </div>
     )
   }

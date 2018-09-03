@@ -8,10 +8,10 @@ import Header2 from './components/Header2'
 
 export default (
   <Switch> 
-      <Route exact path='/' component={Landing} /> 
+      {/* <Route exact path='/' component={Landing} />  */}
       <Route path='/cart' component={Cart}/> 
       <Route path='/dashboard' component={Dashboard}/> 
       <Route path='/settings' component={Settings}/>
-      {/* <Route path='/test' component={Header2}/> */}
+      <Route path='/test' component={Header2}/>
   </Switch> 
 )

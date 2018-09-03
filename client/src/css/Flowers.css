@@ -8,9 +8,10 @@ element.style {
   border-radius: 14px;
   font-size: 28px;
   font-weight: 900;
-  margin: 3px;
+  /* margin: 3px; */
   height: 580px;
   position: relative;
+  
 }
 
 .flower-modal-card button {
@@ -34,12 +35,17 @@ element.style {
 }
 .flower-searchbar input {
   box-shadow: 2px 2px #36454fbd;
+  height: 3px;
 }
-
+.image {
+  position: relative;
+  top: 0;
+  left: 13px;
+}
 .close-button {
   padding: 15px;
   border-radius: 10px;
-  background-color: rgba(211, 211, 211, 0.363);
+  background-color: rgba(211, 211, 211, 0.817);
   font-size: 14px;
   line-height: 1.7rem;
   font-weight: 300;
@@ -54,4 +60,50 @@ element.style {
   width: 100%;
   height: 70px;
   display: flex;
+}
+.add-flowers {
+ background-color: #36454f;
+ font-weight: 500;
+ line-height: 2rem;
+ font-size: 20px;
+}
+@media (max-width: 667px) {
+
+.flower-modal-card {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ width: 200px;
+ height: 200px; 
+ font-size: 12px;
+ position: relative;
+}
+.flower-modal-card img {
+  max-width: 100px;
+  height:150px;
+} 
+.flower-modal-card button {
+  width: 20px;
+  height: 20px;
+  font-size: 8px;
+}
+.flower-modal-card p {
+  position: relative;
+  top: 30px;
+  left:10px;
+} 
+.sticky-header-flowers {
+  background-color: rgba(250, 128, 114, 0.413);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 60%;
+  /* height: 70px; */
+  ;
+  
+}
+
+.overlay-modal {
+ padding: 0;
+}
 }

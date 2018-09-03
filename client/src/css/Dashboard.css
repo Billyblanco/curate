@@ -50,6 +50,7 @@ body {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 1s ease;
+ 
   
 }
 
@@ -79,7 +80,7 @@ body {
   padding-top: 80px;
   background-image: linear-gradient(to top, 
  pink,
- salmon,
+ rgb(250, 128, 114),
  salmon
  );
  border-radius: 3px;
@@ -112,7 +113,7 @@ body {
   left:2.7rem;
   background-image: linear-gradient(to right bottom, 
   rgba(255, 192, 203, 0.632),
-  rgba(255, 127, 80, 0.562));
+  rgba(255, 127, 80, 0.365));
   border-radius: 5px;
   color: #36454f;
   padding:2px;
@@ -139,7 +140,7 @@ body {
  line-height: 2.5rem;
  font-size: 10px;
 }
-@media (max-width: 600px) {
+@media (max-width: 667px) {
   
   .main-body {
     display: flex;
@@ -157,4 +158,35 @@ body {
     margin-top: 20px;
     text-transform: uppercase;
   }
+  
+  /* .entire-modal {
+    max-width: 400px;;
+  } */ 
+  .card:hover, .card:active {
+    transform: rotateY(180deg)
+   }
+   
 }
+
+.screen-sm {
+  display: none;
+}
+
+.screen-m {
+  display: none;
+}
+
+@media(max-width: 1200px) {
+  .screen-m {
+    display: flex;
+  }
+}
+
+@media(max-width: 667px) {
+  .screen-sm {
+    display: flex;
+    
+  }
+ 
+}
+

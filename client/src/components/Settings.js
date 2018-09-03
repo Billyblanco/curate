@@ -4,7 +4,7 @@ import { getUser } from '../redux/reducers/usersReducer'
 import '../css/Settings.css'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
-
+import Nav from './Nav'
 class Settings extends Component {
 
   state = {
@@ -46,6 +46,8 @@ class Settings extends Component {
   render () {
     let { user } = this.props
     return (
+     <div>
+        <Nav />
       <div className='settings-input'>
         <h2> HEY, {user.name}</h2>
           <hr/>
@@ -63,9 +65,10 @@ class Settings extends Component {
                 <input onChange={ (e) => {this.handlePasswordChange(e.target.value)}}/>
                   <button onClick={ ()=> {this.updatePassword()}}>Update Password</button>
              </div>
+           
       </div>
       
-      
+    </div>
     )
   }
 }

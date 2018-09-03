@@ -3,19 +3,10 @@ import { connect } from 'react-redux'
 import { addVase, getArrangementsFlowers, createArrangement } from '../redux/reducers/arrangementsReducer'
 import { getVases } from '../redux/reducers/productReducer'
 import { Link } from 'react-router-dom'
-import ReactS3Uploader from 'react-s3-uploader'
-
 import axios from 'axios'
 import '../css/Vases.css'
+import PictureUpload from './PictureUpload'
 
-
-const config = {
-  bucketName: process.env.REACT_APP_SOME_BUCKET,
-  dirName: 'user-input',
-  region: 'eu-west-1',
-  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
-  secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY,
-}
 
 class Vases extends Component {
   constructor(){
@@ -77,30 +68,7 @@ render () {
         )
     })
   }
-  <ReactS3Uploader
-    signingUrl="/s3/sign"
-    signingUrlMethod="GET"
-    accept="image/*"
-    s3path="/uploads/"
-    preprocess={this.onUploadStart}
-    onSignedUrl={this.onSignedUrl}
-    onProgress={this.onUploadProgress}
-    onError={this.onUploadError}
-    onFinish={this.onUploadFinish}
-    // signingUrlHeaders={{ additional: headers }}
-    // signingUrlQueryParams={{ additional: query-params }}
-    signingUrlWithCredentials={ true }      // in case when need to pass authentication credentials via CORS
-    uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }}  // this is the default
-    contentDisposition="auto"
-    scrubFilename={(filename) => filename.replace(/[^\w\d_\-.]+/ig, '')}
-    inputRef={cmp => this.uploadInput = cmp}
-    autoUpload={true}
-    />
-
-    <div>
-    <input type='file' 
-    onChange={this.uploadFile}/>
-    </div>
+    < PictureUpload />
 </div>
     ) 
   }

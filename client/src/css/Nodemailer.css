@@ -1,0 +1,9 @@
+.form-group {
+  color:white;
+}
+.form-container {
+  background-color: rgba(128, 128, 128, 0.434);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}

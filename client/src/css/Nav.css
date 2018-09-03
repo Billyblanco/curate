@@ -1,17 +1,89 @@
-.navbar ul {
+* {
   text-decoration: none;
-  background-image: white;
-  display: inline-block;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+  margin-left: 15px;
+  color:darkslategray;
 }
 
 .navbar i {
-  color:darkslategray;
-  height: 10px;
-  width: 10px;
+ color:darkslategray;
+ margin-top: 20px;
+ margin-right: 40px;
+ cursor: pointer;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+ 
+}
+
+.navbar h1 {
+  font-stretch: extra-expanded;
+  font-size: 60px;
+  margin-top: 0;
+  cursor: pointer;
+  text-shadow: 0px 4px 3px rgba(245, 243, 243, 0.139);
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.bar1, 
+.bar2,
+.bar3 {
+  width: 40px;
+  height: 5px;
+  background-color: darkslategray;
+  margin: 10px 20px;
+  padding: 0;
+  transition: .4s;
 }
 
 
-
-
+.menu-item { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  color:white;
+  margin: 10px;
+  font-size: 20px;
+  top: 10px;
+}
 
  
+.menuClosed {
+  height: 20vh;
+  width:24.7vw;
+  margin: auto;
+  background-color: rgba(233, 150, 122, 0.947);  
+  position: absolute;
+  opacity: 0.95;
+  top:66px;
+  right:0;
+  z-index: 2;
+  transition: transform .3s ease-in;
+ 
+}
+
+.menuOpened {
+  height: 100vh;
+  width:30vw;
+  background-color:wheat;
+  position: absolute;
+  top:66px;
+  opacity: 0;
+  right:-30vw;
+  z-index: 2;
+  margin: auto;
+  transition: transform .3s ease-in;
+}

@@ -11,6 +11,7 @@ import '../css/Dashboard.css'
 import Header2 from './Header'
 import Image from './Image'
 import Footer from './Footer'
+import Nav from './Nav'
 Modal.setAppElement('#root')
 
 
@@ -58,36 +59,44 @@ closeDecorModal = () => {this.setState({decorModal: false})}
 
 
 render() {
-  console.log(this.props.arrangementsData)
+  // console.log(this.props.arrangementsData)
   return (
-  
 <div>
-  <Header2 />
-  <div className='mid'>
+ 
+  <Nav />
+  <Header2/>
+<div className='mid'>
   <h1> choose your elements </h1>
-  </div>
-<div className='main-body'>
-   
-    <div className='card-container'>
-      <div className='card'>
-          <div className='front front-one'><h2><b>FLEUR</b></h2>
-          </div>
-            <div className='back back-one'> 
-              <span> Select From a Variation of Locally Grown Flowers
-              </span>   
-                <button className='product-button'
-                        onClick={this.toggleFlowerModal}>Click to Add</button>
+    </div>
+      <div className='main-body'>
+      
+          <div className='card-container'>
+            <div className='card'>
+                <div className='front front-one'><h2><b>FLEUR</b></h2>
                 </div>
-            </div>
-        </div>
-
-  <Modal className='inner-modal'
-    isOpen={this.state.flowerModal}
-    style={style}
-    onRequestClose={this.closeFlowerModal}>
-    <Flowers closeModal={this.closeFlowerModal} 
-    showVaseModal={this.toggleVaseModal}/>
-  </Modal>
+                  <div className='back back-one'> 
+                    <span> Select From a Variation of Locally Grown Flowers
+                    </span>   
+                      <button className='product-button'
+                              onClick={this.toggleFlowerModal}>Click to Add</button>
+                      </div>
+                  </div>
+              </div>
+  {/* <div className="screen-m"> */}
+    <Modal  className='inner-modal'
+            overlayClassName='overlay-modal'
+            id='inner-modal-id'
+            isOpen={this.state.flowerModal}
+            style={style}
+            onRequestClose={this.closeFlowerModal}>
+      <Flowers  closeModal={this.closeFlowerModal} 
+                showVaseModal={this.toggleVaseModal}/>
+    </Modal>
+  {/* </div> */}
+  <div className="screen-sm">
+    <Flowers  closeModal={this.closeFlowerModal} 
+                showVaseModal={this.toggleVaseModal}/>
+  </div>
   <div className='card-container'>
     <div className='card'>
       <div className='front front-two'><h2>VASE</h2> </div>
@@ -100,6 +109,7 @@ render() {
   </div>
 
     <Modal  className='inner-modal'
+            id='inner-modal-id'
             isOpen={this.state.vaseModal}
             style={style}
             onRequestClose={this.closeVaseModal}>
@@ -123,12 +133,13 @@ render() {
       < Decor closeModal={this.closeDecorModal}
               showVaseModal={this.toggleVaseModal}/>
   </Modal>
+
 </div> 
-  <div>
-    <Image />
-  </div>
+    <div>
+      <Image/>
+    </div>
         <div>
-          <Footer />
+          <Footer/>
         </div>
 </div>
 

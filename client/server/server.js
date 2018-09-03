@@ -12,8 +12,9 @@ const express = require('express')
     , arrangementsController= require('./controllers/arrangementsController')
     , userController = require('./controllers/userController')
     , ordersController = require('./controllers/ordersController')
-    
-
+    , AWSController = require('./controllers/AWSController')
+    , nodemailerController = require('./controllers/nodemailerController')
+    // , nodemailer = require('nodemailer')
   
 const app = express()
 
@@ -28,6 +29,7 @@ app.use(session({
   resave: false
 }))
 
+
 massive(process.env.CONNECTION_STRING).then( db => {
   app.set('db', db)
   console.log('DATABASE CONNECTED!')
@@ -35,11 +37,10 @@ massive(process.env.CONNECTION_STRING).then( db => {
 
 app.use('/s3', require('react-s3-uploader/s3router')({
   bucket: process.env.REACT_APP_SOME_BUCKET,
-  region: 'us-west-1', //optional
-  // signatureVersion: 'v4', //optional (use for some amazon regions: frankfurt and others)
-  // headers: {'Access-Control-Allow-Origin': '*'}, // optional
+  region: 'us-west-2', //optional
+  headers: {'Access-Control-Allow-Origin': '*'}, 
   ACL: 'private', // this is default
-  uniquePrefix: true // (4.0.2 and above) default is true, setting the attribute to false preserves the original filename in S3
+  uniquePrefix: true 
 }))
 
 //Auth0
@@ -68,13 +69,18 @@ app.put('/api/currentUser/username', userController.updateUsername)
 app.put('/api/currentUser/password', userController.updatePassword)
 // Orders 
 app.post('/api/checkout', ordersController.checkout)
-
 app.delete('/api/arrangements/:id')
 
+// AWS
+app.post('/api/aws', AWSController.sign)
+
+//Nodemailer
+app.post('/send', nodemailerController.send)
+
 //BrowserRouter
-app.get('*', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../build/index.html'));
-})
+// app.get('*', (req, res)=>{
+//   res.sendFile(path.join(__dirname, '../build/index.html'));
+// })
 
 const PORT = 4007
 app.listen(PORT, () => {

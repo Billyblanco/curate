@@ -34,26 +34,25 @@ updateFlowersSearch = (e) => {
     <div>
       <div className='sticky-header-flowers'>
         <button className='close-button' onClick={this.props.closeModal}>close</button>
-          <button onClick={this.props.showVaseModal}>Add Flowers To Vase</button>
            <div className='flower-searchbar'>
               <input type='text' placeholder='Search Flowers'
                      value={this.state.searchFLowers}
                      onChange={this.updateFlowersSearch}
                      width='500'/>
           </div>
+            <button className='add-flowers'onClick={this.props.showVaseModal}>Add Vase</button>
         </div>
 
       { filteredFlowers.map(flower => {
         return (
-          <div key='flower-stuff' className="flower-modal-card">
+          <div className="flower-modal-card">
             <button onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}>Add to Arrangement</button>
             
             <p>{flower.name}</p>
             <p>${flower.price}</p>
             <img className='image'
                 onClick={ () => {this.props.addFlowersToArrangement(flower.id)}}
-                src={ flower.image_url} alt='flowers' height='450' width='350'/>
-              
+                src={ flower.image_url} alt='flowers' height='450' width='350'/>  
           </div>
         )
       })}
