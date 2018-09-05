@@ -53,7 +53,7 @@ render() {
     <div>   
       <div className="navbar">
         <ul>
-          <li><Link to='/dashboard'><i class="far fa-smile"></i></Link></li>
+          <li><Link to='/'><i class="far fa-smile"></i></Link></li>
              <h1>curate.</h1>
 
              {/* <div classname= 'nav-right'>
