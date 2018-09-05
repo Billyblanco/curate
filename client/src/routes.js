@@ -10,7 +10,7 @@ export default (
   <Switch> 
       {/* <Route exact path='/' component={Landing} />  */}
       <Route path='/cart' component={Cart}/> 
-      <Route path='/dashboard' component={Dashboard}/> 
+      <Route path='/' component={Dashboard}/> 
       <Route path='/settings' component={Settings}/>
       
   </Switch> 

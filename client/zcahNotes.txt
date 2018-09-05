@@ -1,0 +1,3 @@
+Made changes to the path for the dot.env config 
+Moved db to server. For production set path for db look up in massive docs
+Changed http to https in the authController. this will need to be st to a complete environment varaible because it still needs to be http on the local

@@ -24,12 +24,12 @@ module.exports = {
           if (users.length) {
             req.session.user = users[0]
             console.log(req.session.user)
-            res.redirect('/#/dashboard')
+            res.redirect('/#/')
           } else {
             let users = await db.createUsers(userInfo)
             req.session.user = users[0]
             console.log(req.session.user)
-            res.redirect('/#/dashboard')
+            res.redirect('/#/')
           }
           
       } catch (error) {

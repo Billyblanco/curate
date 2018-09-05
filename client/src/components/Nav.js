@@ -48,19 +48,25 @@ render() {
   
   return (
     
-  this.props.location.pathname === '/' ? 
-    null :  
+  // this.props.location.pathname === '/' ? 
+  //   null :  
     <div>   
       <div className="navbar">
         <ul>
-          <li><Link to='/dashboard'><i class="far fa-frown"></i></Link></li>
+          <li><Link to='/dashboard'><i class="far fa-smile"></i></Link></li>
              <h1>curate.</h1>
 
-                <div class='menu-toggle' onMouseUp={this.handleMouseUp} visible={this.state.visible}>
-                    <div className='bar1'></div>
-                    <div className='bar2'></div>
-                    <div className='bar3'></div>
-                </div>     
+             {/* <div classname= 'nav-right'>
+             {this.props.user &&  <span className='menu-item'><Link to='/settings'>{this.props.user.name}</Link></span>}
+             <span className='menu-item'><Link to='/cart'>CART</Link></span>
+                 <button className="menu-item" onClick={this.login}>LOGIN</button>
+            </div> */}
+
+                 <div class='menu-toggle' onMouseUp={this.handleMouseUp} visible={this.state.visible}>
+                  <div className='bar1'></div>
+                  <div className='bar2'></div>
+                  <div className='bar3'></div>
+                 </div>      
         </ul>
       </div>
     { this.state.visible ?

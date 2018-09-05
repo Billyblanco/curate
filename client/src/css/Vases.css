@@ -1,5 +1,5 @@
 .entire-vase-modal {
-  z-index: 3000;
+  /* z-index: 3000; */
 }
 .modal-card {
   border: 11px solid rgba(128, 128, 128, 0.733);
@@ -38,7 +38,7 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  width: 74%;
+  width: 65%;
   height: 70px;
   display: flex;
 }
